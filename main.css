@@ -71,3 +71,15 @@
     color:  #121212;
     margin-top: 1.25vw; /* 24px*/
 }
+
+/* main_3 */
+.sec_establish_bg{
+    margin-top: 4.16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec_establish_bg img{
+    width: 70%;
+    margin: 0 auto;
+}
