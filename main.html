@@ -15,7 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 </head>
 <body>
@@ -42,7 +43,7 @@
         <section class="main_section main_1">
             <div class="main_1_wrap">
                 <div class="main_1_bg">
-                    <video controls autoplay loop>
+                    <video autoplay loop muted>
                         <source src="https://s3-figma-videos-production-sig.figma.com/video/1251535565323813858/TEAM/829d/ad32/-81ba-4e86-888f-7116cba075fc?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z~gC6Z4ybllikuj8hDRi~NMa9BcP1J5bcQyEVowTiA3RpcMVuWg3Ljj7zwqICqYsjpcORdtprbEUBPt6w-qg6orLV7eM6~l2KfMY~Q6hYgPCvc3KnLf704Ssfb87S1ShhBi1PLQcZQMRsQXZB4n9k5J8zvJbU3UWFonfZh-JBbZBFsOXkEjrrPl4Goq0fhvamiqdNCuQkgYpdjaGEUGKRPVlLPcoMG5r35QeyzFYCp2JIpgWq12ytbE4Z5gKDRYpUvqKbupln54gpOS2tVvPj-JVz-e8PYLtjAL5D6IJXZXzP4A-uMAz-byboc19Kx1xuwa5chmdNH1a8yzCY-SQFw__"/>
                     </video>
                 </div>
@@ -65,27 +66,240 @@
             </div>
         </section>
         <section class="main_section main_3">
-            <div class="sec_establish"> 
-                <div class="sec_establish_bg">
-                    <img src="./assets/background/main_3_bg.png" />
-                    <!-- 밑으로 이미지 커지기 -->
-                </div>
-                <div class="sec_esta_text">
+            <div class="main_flex_sec sec_establish"> 
+                <div class="flex_sec_text sec_esta_text">
                     <h4> 설립목적 </h4>
-                    <p>위탁받은 자산의 운용업무를 효율적으로 수행하여
+                    <p>위탁받은 자산의 운용업무를 효율적으로 수행하여 <br/>
                         금융산업 발전에 기여하고자 설립되었습니다. 
                     </p>
-                    <div class="main_3_btnWrap">
+                    <button class="flex_sec_btnWrap main_3_btnWrap">
                         <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
                         <p> More View </p>
-                    </div>
+                    </button>
+                </div> 
+                <div class="flex_sec_bg sec_establish_bg">
+                    <img src="./assets/background/main_3_bg.png" />
+                </div>
+            </div>
+            <div class="main_flex_sec"> 
+                <div class="flex_sec_text">
+                    <h4> 지배구조 </h4>
+                    <p>투자의 독립성과 자율성을 보장받는 지배구조를
+                        확립합니다. 
+                    </p>
+                    <button class="flex_sec_btnWrap main_3_btnWrap">
+                        <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                        <p> More View </p>
+                    </button>
+                </div> 
+                <div class="flex_sec_bg">
+                    <img src="./assets/background/main_3_2_bg.png" />
+                </div>
+            </div>
+            <div class="main_flex_sec"> 
+                <div class="flex_sec_text">
+                    <h4> 투자철학 & 정책 </h4>
+                    <p>장기적 관점에서 내재가치에 기반하고 철저한 리스크 관점을
+                        바탕으로 하는 KIC의 투자철학과 정책
+                    </p>
+                    <button class="flex_sec_btnWrap main_3_btnWrap">
+                        <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                        <p> More View </p>
+                    </button>
+                </div> 
+                <div class="flex_sec_bg">
+                    <img src="./assets/background/main_3_3_bg.png" />
+                </div>
+            </div>
+            <div class="main_flex_sec"> 
+                <div class="flex_sec_text">
+                    <h4> 비전 </h4>
+                    <p>신뢰(TRUST)를 바탕으로 국부를 증대시켜 나가는
+                        세계 일류 투자기관으로 도약
+                    </p>
+                    <button class="flex_sec_btnWrap main_3_btnWrap">
+                        <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                        <p> More View </p>
+                    </button>
+                </div> 
+                <div class="flex_sec_bg">
+                    <img src="./assets/background/main_3_4_bg.png" />
                 </div>
             </div>
         </section>
+        <section class="main_section main_4">
+            <div class="main_4_text_wrap sec_main_t">
+                <h4> KIC 서비스 </h4>
+                <p>대한민국 국부펀드 KIC의 다양한 서비스를 안내해드립니다.  </p>
+                <div class="slide_btnWrap">
+                    <button class="slide_btn prevBtn"><div> <img src="./assets/icon/slide_arrow_icon.svg" /> </div>  PREV </button>
+                    <button class="slide_btn nextBtn">NEXT <div> <img src="./assets/icon/slide_arrow_icon.svg" /> </div> </button>
+                </div>
+            </div>
+            <div class="main_4_slick_wrap">
+                <div class="main_4_slick">
+                    <div class="slick_imgWrap"> <img src="./assets/main/slide_img/slide_1.png" /></div>
+                    <span> 국부펀드 소개 </span>
+                </div>
+                <div class="main_4_slick">
+                    <div class="slick_imgWrap"> <img src="./assets/main/slide_img/slide_2.png" /></div>
+                    <span> 연차보고서 웹페이지</span>
+                </div>
+                <div class="main_4_slick">
+                    <div class="slick_imgWrap"> <img src="./assets/main/slide_img/slide_3.png" /></div>
+                    <span> 국제금융 정보 </span>
+                </div>
+                <div class="main_4_slick">
+                    <div class="slick_imgWrap"> <img src="./assets/main/slide_img/slide_4.png" /></div>
+                    <span> 국부펀드 소개 </span>
+                </div>
+                <div class="main_4_slick">
+                    <div class="slick_imgWrap"> <img src="./assets/main/slide_img/slide_5.png" /></div>
+                    <span>국제금융 정보 </span>
+                </div>
+            </div>
+        </section>
+        <section class="main_section main_5">
+            <div class="main_5_text_wrap sec_main_t">
+                <h4> KIC Portfolio </h4>
+                <p>정부와 한국은행, 공공기금 등으로 부터 위탁받은 자산을 <br/>
+                    글로벌 금융시장에 투자하고 있습니다.  </p>
+                <button class="flex_sec_btnWrap main_5_btnWrap">
+                    <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                    <p> More View </p>
+                </button>
+                <div class="blur_section">
+                    <div class="main_5_blur_boxWrap">
+                        <div class="main_5_blur_box">
+                            <div>
+                                <div class="main_5_blur_text">
+                                    <p> 총 운용자산 </p>
+                                    <div id="number">
+                                        1,894
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_5_blur_box">
+                            <div>
+                                <div class="main_5_blur_text">
+                                    <p> 연간 총자산 수익률 </p>
+                                    <div id="number2">
+                                        11.59%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_5_blur_box">
+                            <div>
+                                <div class="main_5_blur_text">
+                                    <p>5년 연환산 수익률 </p>
+                                    <div id="number3">
+                                        6.48%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_5_blur_box">
+                            <div>
+                                <div class="main_5_blur_text">
+                                    <p>대체자산 비중 </p>
+                                    <div id="number4">
+                                        22.0%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <span> * 억 달러 기준 </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="main_section main_6" >
+            <div class="main_6_text_wrap sec_main_t">
+                <h4>ONE KIC </h4>
+                <p>국부 증대의 사명감을 바탕으로 조직에 헌신하고 지속적으로 <br/>
+                    전문성을 향상시키는 열정적인 인재를 기다립니다.  </p>
+            </div>
+            <div class="main_6_recruit_boxWrap">
+                <div class="main_6_recruit_box">
+                    <div> <img src="./assets/icon/recruit/recruit_Icon_1.svg" /></div>
+                    <p class="recruit_text"> 채용공고 </p>
+                    <button class="flex_sec_btnWrap recruit_btnWrap">
+                        <img src="./assets/icon/recruit/recruit_Btn_icon_Blue.svg" />
+                        <p> More View</p>
+                    </button>
+                </div>
+                <div class="main_6_recruit_box">
+                    <div> <img src="./assets/icon/recruit/recruit_Icon_2.svg" /></div>
+                    <p class="recruit_text"> 지원확인 </p>
+                    <button class="flex_sec_btnWrap recruit_btnWrap">
+                        <img src="./assets/icon/recruit/recruit_Btn_icon_Blue.svg" />
+                        <p> More View</p>
+                    </button>
+                </div>
+                <div class="main_6_recruit_box">
+                    <div> <img src="./assets/icon/recruit/recruit_Icon_3.svg" /></div>
+                    <p class="recruit_text"> 결과조회 </p>
+                    <button class="flex_sec_btnWrap recruit_btnWrap">
+                        <img src="./assets/icon/recruit/recruit_Btn_icon_Blue.svg" />
+                        <p> More View</p>
+                    </button>
+                </div>
+                <div class="main_6_recruit_box">
+                    <div> <img src="./assets/icon/recruit/recruit_Icon_4.svg" /></div>
+                    <p class="recruit_text"> 채용 FAQ </p>
+                    <button class="flex_sec_btnWrap recruit_btnWrap">
+                        <img src="./assets/icon/recruit/recruit_Btn_icon_Blue.svg" />
+                        <p> More View</p>
+                    </button>
+                </div>
+            </div>
+        </section> 
+        <section class="main_section main_7">
+            <div class="main_flex_sec"> 
+                <div class="flex_sec_text">
+                    <h4> 지속가능투자 </h4>
+                    <p>KIC는 위탁자산을 투자운용함에 있어 장기적이고 안정적인 수익증대를 위하여
+                        환경·사회·지배구조 등의 ESG 요소를 통합한 투자를 통해지속가능성을 높이기 위해 노력하고 있습니다.
+                    </p>
+                    <button class="flex_sec_btnWrap main_3_btnWrap">
+                        <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                        <p> More View </p>
+                    </button>
+                </div> 
+                <div class="flex_sec_bg">
+                    <img src="./assets/background/main_7_bg.png" />
+                </div>
+            </div>
+        </section>   
         
     </main>
     <footer>
 
     </footer>
+
+    <!-- gsap  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script src="https://assets.codepen.io/16327/ScrollTrigger.min.js?v=32"></script>
+    <script src="./js/main_gsap.js"></script>
+
+    <!-- slick -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/slide.js"></script>
+    
+
+    <script src='https://cdn.jsdelivr.net/countupjs/1.8.5/countUp.min.js'></script>
+    <script src='https://cdn.rawgit.com/toddmotto/foreach/e82a4fed997593820ae65a09a35068b696bf10a0/dist/foreach.min.js'></script>
+    <script src='https://cdn.rawgit.com/imakewebthings/waypoints/d21e1690bb5f407de4bf0bd9f08d967cf2027424/lib/noframework.waypoints.js'></script>
+    <script src='https://cdn.rawgit.com/cferdinandi/smooth-scroll/aad0d74d4d97d9ca8e1323356abded9d5770a714/dist/js/smooth-scroll.min.js'></script>
+    <script  src="./js/countup.js"></script>
+
 </body>
 </html>
