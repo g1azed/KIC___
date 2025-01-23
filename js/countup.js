@@ -1,4 +1,4 @@
-window.onload = function () {
+
     var options = {
         useEasing: true,
         useGrouping: true,
@@ -51,4 +51,3 @@ window.onload = function () {
 
     var demo3 = new CountUp("number4", 0, 22, 0, 2.5, options3);
     demo3.start();
-};

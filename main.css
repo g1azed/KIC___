@@ -98,6 +98,11 @@ div.sec_main_t p{
 .main_3{
     font-size: 0;
 }
+.main_flex_secWrap{
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
 .main_flex_sec{
     position: relative;
 }
@@ -109,7 +114,7 @@ div.sec_main_t p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* color: #fff; */
+    color: #fff;
 }
 .flex_sec_text h4{
     font-family: Noto Sans CJK KR;
@@ -123,6 +128,9 @@ div.sec_main_t p{
     justify-content: flex-start;
     align-items: center;
     gap: 0.625vw
+}
+.flex_sec_btnWrap p{
+    color: #fff;
 }
 .flex_sec_text p{
     font-family: Noto Sans CJK KR;
@@ -148,9 +156,6 @@ div.sec_main_t p{
     margin: 0 auto;
 }
 
-
-
-/* main_3 */
 .sec_establish {
     display: flex;
     justify-content: center;
@@ -163,19 +168,28 @@ div.sec_main_t p{
     position: relative;
 }
 .sec_esta_text{
+    /* color: #121212; */
     position: sticky;
     top: 35%;
     left: 50%;
     transform: translate(-50%, 0);
     padding-bottom: 400px; 
 }
+.sec_esta_text p{
+    color: #fff;
+}
+.sec_esta_btn_text{
+    color: #fff;
+}
 
 
 /* main_4 */
 .main_4{
-    padding: 6.25vw 0 3.33vw 6.25vw;
+    width: 100%;
+    height: 1100px;
     overflow: hidden;
     position: relative;
+    padding: 9.25vw 0 9.33vw 6.25vw;
     /* cursor: url("./assets/icon/slide_cursor.svg"), auto; */
     /* 마우스 커서 rotation 애니메이션 하려면 js 추가해야함 일단 보류 */
 }
@@ -364,8 +378,27 @@ div.sec_main_t p{
 
 /* main_7 */
 .main_7{
+    overflow: hidden;
     max-height: 980px;
 }
 .main_7 .flex_sec_bg{
     background-attachment: fixed;
+}
+
+
+/* main_8 */
+.main_8{
+    width: 100%;
+}
+.news_head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.news_tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
