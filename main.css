@@ -190,7 +190,7 @@ div.sec_main_t p{
 /* main_4 */
 .main_4{
     width: 100%;
-    height: 1100px;
+    height: 110vh;
     overflow: hidden;
     position: relative;
     padding: 9.25vw 0 9.33vw 6.25vw;
@@ -255,7 +255,7 @@ div.sec_main_t p{
     line-height: 1.56vw;
 }
 
-.slick_imgWrap{
+.main_4_slide .slick_imgWrap{
     /* width: 31.5vw; */
     height: 450px; 
     margin-bottom: 24px;
