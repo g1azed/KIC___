@@ -100,9 +100,8 @@ div.sec_main_t p{
     font-size: 0;
 }
 .main_flex_secWrap{
-    height: 100vh;
-    position: sticky;
-    top: 0;
+    height: auto;
+    position: static;
 }
 .main_flex_sec{
     position: relative;
@@ -188,13 +187,28 @@ div.sec_main_t p{
 
 
 /* main_4 */
+@keyframes cursorRotate {
+    0%{ transform: rotate(0);}
+    100%{ transform: rotate(360deg);}
+}
+.cursor{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex; justify-content: center; align-items: center;
+    pointer-events: none; 
+    /* animation: cursorRotate 4s infinite linear; */
+}
 .main_4{
     width: 100%;
-    height: 110vh;
+    height: 1080px;
     overflow: hidden;
     position: relative;
-    padding: 9.25vw 0 9.33vw 6.25vw;
-    /* cursor: url("./assets/icon/slide_cursor.svg"), auto; */
+    padding: 9.25vw 0 0 6.25vw;
+    /* cursor: none; */
+    /* cursor: url('./assets/icon/slide_cursor.svg'), auto; */
     /* 마우스 커서 rotation 애니메이션 하려면 js 추가해야함 일단 보류 */
 }
 .main_4_text_wrap{
@@ -391,7 +405,6 @@ div.sec_main_t p{
     width: 100%;
     height: 980px;
     background-image: url('./assets/background/main_7_bg.png');
-    background-attachment: fixed;
 }
 
 /* main_8 */

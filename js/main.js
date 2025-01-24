@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+
     const recruit_box = $(".main_6_recruit_box");
 
     recruit_box.hover(function(){
@@ -25,4 +26,22 @@ $(document).ready(function(){
         let index = $(this).index() + 1; // index는 0부터 시작하므로 +1을 추가
         $(this).find(".recruit_icon").attr("src", "./assets/icon/recruit/recruit_Icon_" + index + ".svg");
     })
+
+    /* 마우스 커서 */
+    // document.addEventListener("mousemove", (e) => {
+    //     // 마우스 커서의 좌표를 가져옵니다.
+    //     const x = e.clientX;
+    //     const y = e.clientY;
+    
+    //     // cursor_div를 커서 좌표로 이동
+    //     $(".cursor").css('transform', 'translate(' + x + 'px, ' + y + 'px)');
+        
+    //     // 원하는 영역에 올라오면 클래스 추가 및 제거
+    //     $('.main_4').eq(0).on('mouseover', function () {
+    //         $('.main_4').eq(0).addClass('on');
+    //     });
+    //     $('.main_4').eq(0).on('mouseleave', function () {
+    //         $('.main_4').eq(0).removeClass('on');
+    //     });
+    // });
 })
