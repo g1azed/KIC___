@@ -185,6 +185,13 @@ div.sec_main_t p{
     color: #fff;
 }
 
+.main_flex_secWrap{
+    background: #121212;
+}
+.layerd{
+    width: 60%;
+    margin: 0 auto;
+}
 
 /* main_4 */
 @keyframes cursorRotate {
