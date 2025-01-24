@@ -23,8 +23,8 @@ $(document).ready(function(){
     /* 포토갤러리 슬라이드 */
     $('.photo_slideWrap').slick({
         infinite: true,
-        // autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 800,
         arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,
