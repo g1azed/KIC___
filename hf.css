@@ -49,3 +49,59 @@ header{
 .header_icon:nth-child(1){
     padding-right: 1.04vw /* 20px */
 }
+
+/* footer */
+footer{
+    padding: 5.2vw 6.25vw;
+    background: #041535;
+}
+.footer_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer_top div:nth-child(2){
+    width: 560px;
+}
+.footer_top div:nth-child(2) img{
+    width: 100%;
+}
+footer .footer_top ul{
+    display: flex;
+    gap: 2.08vw;
+    align-items: center;
+    justify-content: space-between;
+}
+footer .footer_top ul li{
+    font-family: Roboto;
+    font-size: 0.93vw;
+    font-weight: 700;
+    line-height: 1.35vw;
+    color: #424F67;
+}
+footer .footer_top ul li:nth-child(1){
+    color: #fff;
+}
+
+
+.footer_bottom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer_bottom p{
+    font-family: Noto Sans KR;
+    font-size: 0.83vw;
+    font-weight: 400;
+    line-height: 1.25vw;
+    color: #fff;
+}
+.footer_bottom p:nth-child(2){
+    padding: 1.25vw 0 2.08vw 0;
+}
+
+.webwatch{
+    width: 140px;
+}
+.webwatch img{ width: 100%; }
