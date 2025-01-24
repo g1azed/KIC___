@@ -115,7 +115,6 @@ div.sec_main_t p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #fff;
 }
 .flex_sec_text h4{
     font-family: Noto Sans CJK KR;
@@ -123,6 +122,10 @@ div.sec_main_t p{
     font-weight: 700;
     line-height: 3.33vw;
     letter-spacing: -0.1%;
+    color: #ffffff;
+}
+.flex_sec_text p{
+    color: #ffffff;
 }
 .flex_sec_btnWrap{
     display: flex;
@@ -382,7 +385,7 @@ div.sec_main_t p{
     overflow: hidden;
     max-height: 980px;
 }
-.main_flex_sec{
+.main_7 .main_flex_sec{
     width: 100%;
     height: 980px;
     background-image: url('./assets/background/main_7_bg.png');

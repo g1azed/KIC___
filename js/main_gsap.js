@@ -22,8 +22,8 @@ gsap.to(".sec_establish_bg", {
         scrub: 1,
     },
 });
-
-gsap.to(".sec_esta_text h4", {
+gsap.set(".for_esta", {color: "#121212",});
+gsap.to(".for_esta", {
     color: "#ffffff",
     scrollTrigger: {
         trigger: ".sec_esta_text",
