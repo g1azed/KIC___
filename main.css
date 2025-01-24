@@ -257,13 +257,15 @@ div.sec_main_t p{
 
 .main_4_slide .slick_imgWrap{
     /* width: 31.5vw; */
-    height: 450px; 
+    /* height: 450px;  */
     margin-bottom: 24px;
 }
 
 .main_4_slick .slick_imgWrap {
-    height: 23.4vw; /* 기본 높이 */
+    height: 23.4vw; 
+    /* 기본 높이 */
     transition: height 0.4s ease;
+    padding-bottom: 1.25vw;
 }
 
 .main_4_slick.slick-center .slick_imgWrap{
