@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP ScrollTrigger</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      height: 300vh; /* 긴 페이지 */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 50px; /* 초기 크기 */
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 8px;
+      position: fixed; /* 화면 중심 고정 */
+      top: 50%; /* 세로 중앙 */
+      left: 50%; /* 가로 중앙 */
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script>
+    // GSAP & ScrollTrigger 등록
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 박스 애니메이션
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".box",
+        start: "top 90%", // 애니메이션 시작 위치
+        end: "top -20%", // 애니메이션 종료 위치
+        scrub: true, // 스크롤 동기화
+      },
+    })
+    // 1단계: 박스가 작아졌다가 커짐
+    .fromTo(".box", 
+      { width: 50, height: 50 }, // 초기 크기
+      { width: 300, height: 300, duration: 1 } // 커지는 크기
+    )
+    // 2단계: 커진 상태 유지
+    .to(".box", {
+      width: 300,
+      height: 300,
+      duration: 2, // 유지 시간
+    })
+    // 3단계: 다시 작아짐
+    .to(".box", {
+      width: 50,
+      height: 50,
+      duration: 1, // 작아지는 속도
+    });
+  </script>
+</body>
+</html>
