@@ -159,7 +159,7 @@ div.sec_main_t p{
     width: 100%;
     margin: 0 auto;
 }
-
+    /* esta */
 .sec_establish {
     display: flex;
     justify-content: center;
@@ -189,9 +189,10 @@ div.sec_main_t p{
 .main_flex_secWrap{
     background: #121212;
 }
-.layerd{
-    width: 60%;
-    margin: 0 auto;
+
+/* 지배구조  */
+.layerd_1 {
+    transform: scale(0.5)
 }
 
 /* main_4 */

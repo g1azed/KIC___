@@ -1,3 +1,4 @@
+
 header{
     width: 100vw;
     height: 5.2vw;
@@ -105,3 +106,15 @@ footer .footer_top ul li:nth-child(1){
     width: 140px;
 }
 .webwatch img{ width: 100%; }
+
+.header_mo{
+    display: none;
+}
+
+
+@media (max-width: 750px) {
+    .pc_display{ display: none; }
+    .mo_display{ display: inline-block;}
+
+    
+} 
