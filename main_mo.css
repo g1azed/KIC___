@@ -7,7 +7,7 @@ body{
 }
 
 main{
-    width: 375px;
+    width: 100%;
 }
 
 
@@ -20,7 +20,7 @@ header{
 }
 .headerWrap{
     width: 100%;
-    padding: 24px 20px;
+    padding: 6.4vw 5.3vw;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -28,7 +28,7 @@ header{
 
 }
 .header_logo{
-    width: 158px;
+    width: 42.1vw;
 }
 .header_logo img{
     width: 100%;
@@ -320,6 +320,8 @@ div.sec_main_t p{
 /* slide */
 .main_4_slick_wrap{
     margin-top: 5rem;
+    display: flex;
+    gap: 10px;
 }
 .main_4_slick_wrap .item{
     width: 240px !important;
@@ -331,7 +333,7 @@ div.sec_main_t p{
 }
 .slick_imgWrap img{
     object-fit: cover;
-    width: 240px;    height: 180px;
+    width: 240px; height: 180px;
 }
 .slick-initialized .slick-slide{
     margin-right: 20px;
@@ -453,7 +455,7 @@ div.sec_main_t p{
 }
 
 .recruit_text{
-    font-size: 1.25vw;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.66vw;
     letter-spacing: -0.1%;

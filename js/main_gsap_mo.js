@@ -21,7 +21,7 @@ gsap.to(".sec_establish_bg", {
     ease: "none",
     y: 0,
     scrollTrigger: {
-        markers: true,
+        // markers: true,
         trigger: ".sec_establish_bg",
         start: "-=800",
         end: "0",
