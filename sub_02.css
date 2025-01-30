@@ -1,0 +1,203 @@
+main{
+    width: 100%;
+}
+
+.sub_02_1{
+    width: 100%;
+}
+
+.sub_02_1_text{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/sub/sub_2_main.png");
+    background-size: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.04vw;
+}
+.sub_02_1_text h1{
+    /* font-family: Noto Sans CJK KR; */
+    font-size: 4.16vw;
+    font-weight: 700;
+    line-height: 5.2vw;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+
+}
+.sub_02_1_text p{
+    /* font-family: Noto Sans CJK KR; */
+    font-size: 0.93vw;
+    font-weight: 500;
+    line-height: 1.35vw;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+}
+
+
+/* sub_02_2 */
+.text_bread{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sub_02_2{
+    padding: 9.3vw 6.25vw;
+}
+.sub_02_2_text_wrap h1 {
+    font-size: 4.16vw;
+    font-weight: 700;
+    line-height: 5.2vw;
+    letter-spacing: -0.2%;
+    text-align: left;
+    margin-bottom: 1.04vw;
+}
+.sub_02_2_text_wrap p {
+    font-size: 0.93vw;
+    font-weight: 500;
+    line-height: 1.35vw;
+    letter-spacing: -0.1%;
+    text-align: left;
+}
+.sub-banner{
+    margin-top: 3.3vw;
+    width: 100%; 
+    height: 20.833vw;
+    background-image: url("./assets/sub/sub_2_sub_img.png")
+}
+
+.sub-banner-w{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: width .83s ease-out
+}
+
+
+
+/* sub_02_container */
+.sub_02_h4{
+    font-family: Pretendard;
+    font-size: 2.08vw;
+    font-weight: 700;
+    line-height: 2.5vw;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+
+.sub_02_container_content_head span{
+    width: 1.66vw; height: 1.66vw;
+    background-color: #0B3585;
+    color: #fff;
+    padding: 0.104vw 0.57vw;
+    /* font-family: Pretendard; */
+    font-size: 1.04vw;
+    font-weight: 500;
+    line-height: 1.45vw;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+.sub_02_container_content_head h6{
+    /* font-family: Pretendard; */
+    font-size: 1.25vw;
+    font-weight: 600;
+    line-height: 1.66vw;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+.sub_02_3_container_content p{
+    /* font-family: Noto Sans CJK KR; */
+    font-size: 0.83vw;
+    font-weight: 400;
+    line-height: 1.25vw;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    padding: 0.83vw 0 0 2.29vw; 
+}
+.sub_02_container_inner{
+    display: flex;
+    justify-content: flex-start;
+    margin: 8.3vw 6.25vw 0 6.25vw; 
+    padding-bottom: 8.3vw;
+    border-bottom: 1px solid #ccc;
+}
+.sub_02_container .item{
+    flex: 1;
+}
+
+.sub_02_3_container_content ul{
+    display: flex;
+    flex-direction: column;
+    gap: 3.3vw;
+}   
+.sub_02_container_content_head{
+    display: flex;
+    gap: 0.625vw;
+}
+
+/* sub_02_4 */
+.sub_02_4_container_content li{
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.56vw 2.08vw;
+    margin-bottom: 1.66vw;
+}
+.sub_02_4_container_content li:hover{
+    background: #0B3585;
+    color: #fff;
+}
+
+.sub_02_4_container_content li p{
+    font-size: 1.25vw;
+    font-weight: 500;
+    line-height: 1.66vw;;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+/* sub_02_5  */
+.sub_02_5_container_content ul{
+    display: flex;
+    flex-direction: row;
+    gap: 2.08vw;
+}
+.sub_02_5_container_content .people{
+    width: 13.43vw; height: 13.43vw;
+    border-radius: 50%;
+    background-color: #0B3585;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub_02_5_container_content ul li span{
+    font-size: 0.83vw;
+    font-weight: 400;
+    line-height: 1.25vw;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding-bottom: 0.625vw;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 0.625vw;
+}
+.sub_02_5_container_content ul li p{
+    font-size: 1.25vw;
+    font-weight: 500;
+    line-height: 1.66vw;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+
+}

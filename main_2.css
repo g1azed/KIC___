@@ -55,7 +55,7 @@ div.sec_main_t p{
 .main_1_text{
     position: absolute;
     bottom: 5.2vw; left: 6.25vw;
-    max-width: 43.38vw;
+    max-width: 50.38vw;
 }
 .main_1_text h2{
     font-family: Noto Sans CJK KR;
@@ -99,9 +99,42 @@ div.sec_main_t p{
 .main_3{
     font-size: 0;
 }
+/* esta */
+.sec_establish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.625vw; 
+    position: relative;
+}
+.sec_esta_text{
+    /* color: #121212; */
+    position: sticky;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-bottom: 400px; 
+    font-family: Noto Sans CJK KR;
+    font-size: 2.5vw;
+    font-weight: 700;
+    line-height: 3.33vw;
+    letter-spacing: -0.1%;
+    color: #ffffff;
+}
+.sec_esta_text p{
+    color: #fff;
+}
+.sec_esta_btn_text{
+    color: #fff;
+}
+
+
+/* main_3 공용 */
 .main_flex_secWrap{
-    height: 200vh;
+    /* height: 200vh; */
     position: static;
+    background: #121212;
 }
 .main_flex_sec{
     margin: 0 auto;
@@ -152,47 +185,38 @@ div.sec_main_t p{
     letter-spacing: -0.1%;
 }
 .flex_sec_bg{
-    width: 100%;
+    width: 50%;
+    height: 100vh;
     z-index: -3;
+    overflow: hidden;
 }
 .flex_sec_bg img{
     width: 100%;
     margin: 0 auto;
+    object-fit: cover;
 }
-    /* esta */
-.sec_establish {
+
+
+/* layerd_1 */
+.layered{
+    position: relative;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 0.625vw; 
-    position: relative;
+    justify-content: center;
+
 }
-.sec_establish{
-    position: relative;
+.layered > .flex_sec_text{
+    z-index: 5;
 }
-.sec_esta_text{
-    /* color: #121212; */
+.layered > .flex_sec_bg{
     position: sticky;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding-bottom: 400px; 
-}
-.sec_esta_text p{
-    color: #fff;
-}
-.sec_esta_btn_text{
-    color: #fff;
-}
-
-.main_flex_secWrap{
-    background: #121212;
-}
-
-/* 지배구조  */
-.layerd_1 {
-    transform: scale(0.5)
+    top: 300px;
+    border-radius: 10px;
+    z-index: 2;
+    /* transform: translateY(30%); */
+    /* width: 50%;
+    height: 50%; */
 }
 
 /* main_4 */

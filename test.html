@@ -1,67 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSAP ScrollTrigger</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <style>
-    body {
-      height: 400vh; /* 긴 페이지 */
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Resize Box</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            height: 300vh; /* 스크롤 테스트를 위해 높이 설정 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        .spacer {
+            height: 100vh; /* 시작 전 여백 */
+        }
 
-    .box {
-      width: 50px; /* 초기 크기 */
-      height: 50px;
-      background-color: #3498db;
-      border-radius: 8px;
-      position: fixed; /* 화면 중심 고정 */
-      top: 50%; /* 세로 중앙 */
-      left: 50%; /* 가로 중앙 */
-      transform: translate(-50%, -50%);
-    }
-  </style>
+        
+        .box-container {
+            position: relative;
+            width: 100%;
+            height: 600px; /* 애니메이션이 일어나는 구간 */
+        }
+        .box {
+            position: sticky;
+            top: 30%;
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="box"></div>
 
-  <script>
-    // GSAP & ScrollTrigger 등록
-    gsap.registerPlugin(ScrollTrigger);
+    <div class="spacer"></div> <!-- 시작 전 빈 공간 -->
+    <div class="box-container">
+        <div class="box">Box</div>
+    </div>
 
-    // 박스 애니메이션
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".box",
-        start: "top 90%", // 애니메이션 시작 위치
-        end: "top -20%", // 애니메이션 종료 위치
-        scrub: true, // 스크롤과 동기화
-        pin: true, // 박스 고정
-      },
-    })
-    // 1단계: 박스가 커짐
-    .to(".box", {
-      width: 300, // 커진 크기
-      height: 300,
-      duration: 1,
-    })
-    // 2단계: 유지 상태
-    .to(".box", {
-      width: 300, 
-      height: 300, 
-      duration: 2, // 커진 상태를 유지
-    })
-    // 3단계: 박스가 다시 작아짐
-    .to(".box", {
-      width: 50, // 원래 크기
-      height: 50,
-      duration: 1,
-    });
-  </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".box-container",
+                start: "top center",
+                end: "+=800px", // 전체 애니메이션 범위
+                scrub: true,
+                pin: false,
+            }
+        })
+        .to(".box", { width: 300, height: 300, duration: 0.5 }) // 커지기
+        .to(".box", { width: 300, height: 300, duration: 0.5 }) // 400px 동안 유지 (빈 애니메이션)
+        .to(".box", { width: 100, height: 100, duration: 0.5 }); // 다시 작아지기
+    </script>
+
 </body>
 </html>
