@@ -3,79 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP ScrollTrigger 박스 크기 조정</title>
+    <title>GSAP ScrollTrigger Text Reveal</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         body {
-            height: 600vh; /* 충분한 스크롤 공간 */
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: white;
+            overflow-x: hidden;
         }
+
         .spacer {
             height: 100vh;
         }
-        .box {
-            width: 50%;
-            height: 100vh;
-            background-color: #3498db;
-            position: sticky;
-            top: 50px;
-            margin: auto;
-            border-radius: 20px;
+
+        .text-container {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .reveal-text {
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .reveal-text span {
+            display: inline-block;
+            transform: translateY(100%);
         }
     </style>
 </head>
 <body>
 
-    <div class="spacer"></div> <!-- 스크롤을 위한 여백 -->
-    <div class="box"></div>
+    <div class="spacer"></div>
+
+    <div class="text-container">
+        <span class="reveal-text">Hello,</span>
+        <span class="reveal-text">this</span>
+        <span class="reveal-text">is</span>
+        <span class="reveal-text">a</span>
+        <span class="reveal-text">scroll-triggered</span>
+        <span class="reveal-text">text</span>
+        <span class="reveal-text">reveal</span>
+        <span class="reveal-text">animation!</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="text-container">
+        <span class="reveal-text">Another</span>
+        <span class="reveal-text">set</span>
+        <span class="reveal-text">of</span>
+        <span class="reveal-text">revealing</span>
+        <span class="reveal-text">words.</span>
+    </div>
+
     <div class="spacer"></div>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        const box = document.querySelector('.box');
-
-        // 1️⃣ 박스 크기 점진적 확대
-        gsap.to(box, {
-            width: '100%',
-            height: '150vh',
-            scrollTrigger: {
-                trigger: box,
-                start: "top center",
-                end: "top -500px", // 스크롤 500px 동안 서서히 증가
-                scrub: 1, // 점진적으로 변화
-                ease: "none",
-                markers: true
-            }
+        gsap.utils.toArray(".reveal-text").forEach((element) => {
+            let word = element.innerText;
+            element.innerHTML = `<span>${word}</span>`;
+            
+            gsap.fromTo(element.querySelector("span"), 
+                { y: "100%", opacity: 0 }, 
+                { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
+                  scrollTrigger: {
+                      trigger: element,
+                      start: "top 80%", 
+                      toggleActions: "play none none none"
+                  }
+                }
+            );
         });
-
-        // 2️⃣ 박스 크기 유지 (중간 구간 추가)
-        gsap.to(box, {
-            scrollTrigger: {
-                trigger: box,
-                start: "top -500px",
-                end: "top -800px", // 유지하는 구간 300px 추가
-                scrub: true,
-                ease: "none",
-                markers: true
-            }
-        });
-
-        // 3️⃣ 박스 크기 점진적 축소
-        gsap.to(box, {
-            width: '50%',
-            height: '100vh',
-            scrollTrigger: {
-                trigger: box,
-                start: "top -800px", // 유지 후 부드럽게 축소 시작
-                end: "top -1500px", // 700px 동안 서서히 축소
-                scrub: 1, // 스크롤과 자연스럽게 동기화
-                ease: "none",
-                markers: true
-            }
-        });
-
     </script>
 
 </body>

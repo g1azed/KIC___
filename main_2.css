@@ -202,6 +202,16 @@ div.sec_main_t p{
     z-index: 5;
 }
 
+.reveal {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+}
+
 
 /* layerd_1 */
 .layered{

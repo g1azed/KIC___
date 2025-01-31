@@ -98,6 +98,7 @@ tl.to(resizeDiv, {
     y: 350
 }, "+=0");
 
+
 // 4️⃣ 특정 지점에서 y값 400으로 변경
 tl.to(resizeDiv, {
     y: 400,
@@ -176,3 +177,22 @@ tl_3.to(resizeDiv3, {
 tl_3.to(resizeDiv3, {
     // y: 600,
 }, "+=0");
+
+
+// reveal text
+
+gsap.utils.toArray(".reveal").forEach((element) => {
+    let word = element.innerText;
+    element.innerHTML = `<span>${word}</span>`;
+    
+    gsap.fromTo(element.querySelector("span"), 
+        { y: "100%", opacity: 0 }, 
+        { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
+            scrollTrigger: {
+                trigger: '.layerd_1_text',
+                start: "top 80%", 
+                toggleActions: "play none none none"
+            }
+        }
+    );
+});
