@@ -111,20 +111,21 @@ div.sec_main_t p{
     flex-direction: column;
     gap: 0.625vw; 
     position: relative;
+    z-index: 1;
 }
 .sec_esta_text{
-    /* color: #121212; */
     position: sticky;
     top: 35%;
     left: 50%;
     transform: translate(-50%, 0);
-    padding-bottom: 400px; 
+    /* padding-bottom: 00px;  */
     font-family: "Noto Sans KR", serif;
     font-size: 2.5vw;
     font-weight: 700;
     line-height: 3.33vw;
-    letter-spacing: -0.1%;
+    letter-spacing: -1%;
     color: #ffffff;
+    z-index: 10;
 }
 .sec_esta_text p{
     color: #fff;
@@ -138,7 +139,6 @@ div.sec_main_t p{
 .main_flex_secWrap{
     height: 200vh;
     position: static;
-    background: #121212;
 }
 .main_flex_sec{
     margin: 0 auto;
@@ -190,7 +190,6 @@ div.sec_main_t p{
 .flex_sec_bg{
     width: 50%;
     height: 100vh;
-    z-index: -3;
     overflow: hidden;
 }
 .flex_sec_bg img{
@@ -198,6 +197,9 @@ div.sec_main_t p{
     height: 100%;
     margin: 0 auto;
     object-fit: cover;
+}
+.flex_sec_bg.sec_establish_bg{
+    z-index: 5;
 }
 
 
@@ -208,18 +210,15 @@ div.sec_main_t p{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    overflow: hidden;
 }
 .layered > .flex_sec_text{
-    z-index: 5;
+    z-index: 2;
 }
 .layered > .flex_sec_bg{
     border-radius: 10px;
-    z-index: 2;
-    transform: scale(0.5);
-    /* transform: translateY(0%); */
     width: 100%;
-    height: 180vh;
+    height: 200vh;
 }
 
 /* main_4 */
@@ -239,7 +238,7 @@ div.sec_main_t p{
 }
 .main_4{
     width: 100%;
-    height: 900px;
+    height: 1080px;
     overflow: hidden;
     position: relative;
     padding: 9.25vw 0 0 6.25vw;
