@@ -137,13 +137,13 @@ div.sec_main_t p{
 
 /* main_3 공용 */
 .main_flex_secWrap{
-    margin: 50px 0;
+    margin: 100px 0;
     height: 200vh;
     position: static;
 }
 .main_flex_sec{
     margin: 0 auto;
-    /* position: relative; */
+    position: relative;
 }
 .flex_sec_text{
     position: absolute;
@@ -189,7 +189,7 @@ div.sec_main_t p{
     letter-spacing: -0.1%;
 }
 .flex_sec_bg{
-    width: 50%;
+    width: 80%;
     height: 100vh;
     overflow: hidden;
 }

@@ -84,7 +84,7 @@ const tl = gsap.timeline({
     }
 });
 
-tl.set(resizeDiv, { scale: 0.5, y: 100 });
+tl.set(resizeDiv, { scale: 0.8, y: 100 });
 
 tl.to(resizeDiv, {
     scale: 1,
@@ -109,7 +109,7 @@ tl.to(resizeDiv, {
 tl.to(resizeDiv, {
     width: '100%',
     height: '200vh',
-    scale: 0.5,
+    scale: 0.8,
     y: 500,
     duration: 2, 
 });
@@ -126,7 +126,7 @@ const tl_1 = gsap.timeline({
     }
 });
 
-tl_1.set(resizeDiv2, { scale: 0.5, y: 100 });
+tl_1.set(resizeDiv2, { scale: 0.8, y: 100 });
 
 tl_1.to(resizeDiv2, {
     scale: 1,
@@ -149,12 +149,12 @@ tl_1.to(resizeDiv2, {
     y: 400,
 }, "+=0");
 
-// 5️⃣ 배경이 점점 작아짐 (scale: 0.5, y: 500)
+// 5️⃣ 배경이 점점 작아짐 (scale: 0.8, y: 500)
 tl_1.to(resizeDiv2, {
     width: '100%',
     height: '200vh',
     duration: 2, 
-    scale: 0.5,
+    scale: 0.8,
     y: 500,
 });
 
@@ -170,8 +170,8 @@ const tl_3 = gsap.timeline({
     }
 });
 
-// 1️⃣ 초기 설정 (scale: 0.5, y: 100)
-tl_3.set(resizeDiv3, { scale: 0.5, y: 100 });
+// 1️⃣ 초기 설정 (scale: 0.8, y: 100)
+tl_3.set(resizeDiv3, { scale: 0.8, y: 100 });
 
 // 2️⃣ `.layerd_1` 구간: 배경 커짐 (scale 1, y 300)
 tl_3.to(resizeDiv3, {
