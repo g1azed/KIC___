@@ -76,7 +76,7 @@ gsap.to('.sec_establish_bg', {
 const resizeDiv = document.querySelector('.layerd_1_bg');
 const tl = gsap.timeline({
     scrollTrigger: {
-        trigger: '.layerd_1',
+        trigger: '.sec_establish',
         start: "top top",
         end: "+=1500px",
         scrub: 2,
@@ -206,10 +206,34 @@ gsap.utils.toArray(".reveal").forEach((element) => {
         { y: "100%", opacity: 0 }, 
         { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
             scrollTrigger: {
-                trigger: '.layerd_1_text',
-                start: "top 80%", 
-                toggleActions: "play none none none"
+                markers: true,
+                trigger: '.layered',
+                start: "top center", 
+                toggleActions: "restart none restart restart"
             }
         }
     );
+    // gsap.fromTo(element.querySelector("span"), 
+    //     { y: "100%", opacity: 0 }, 
+    //     { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
+    //         scrollTrigger: {
+    //             trigger: '.layerd_2',
+    //             start: "top center", 
+    //             toggleActions: "restart  none none none"
+    //         }
+    //     }
+    // );
+    // gsap.fromTo(element.querySelector("span"), 
+    //     { y: "100%", opacity: 0 }, 
+    //     { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
+    //         scrollTrigger: {
+    //             trigger: '.layerd_3',
+    //             start: "top center", 
+    //             toggleActions: "restart  none none none"
+    //         }
+    //     }
+    // );
+    
+
+
 });

@@ -143,11 +143,11 @@ div.sec_main_t p{
 }
 .main_flex_sec{
     margin: 0 auto;
-    position: relative;
+    /* position: relative; */
 }
 .flex_sec_text{
     position: absolute;
-    top: 50%; left: 50%;
+    bottom: 30%; left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
