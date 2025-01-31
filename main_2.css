@@ -136,7 +136,7 @@ div.sec_main_t p{
 
 /* main_3 공용 */
 .main_flex_secWrap{
-    /* height: 200vh; */
+    height: 200vh;
     position: static;
     background: #121212;
 }
@@ -195,6 +195,7 @@ div.sec_main_t p{
 }
 .flex_sec_bg img{
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     object-fit: cover;
 }
@@ -213,13 +214,12 @@ div.sec_main_t p{
     z-index: 5;
 }
 .layered > .flex_sec_bg{
-    position: sticky;
-    top: 300px;
     border-radius: 10px;
     z-index: 2;
-    /* transform: translateY(30%); */
-    width: 50%;
-    height: 50%;
+    transform: scale(0.5);
+    /* transform: translateY(0%); */
+    width: 100%;
+    height: 180vh;
 }
 
 /* main_4 */

@@ -29,94 +29,54 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const resizeDiv = document.querySelector('.layerd_1_bg');
-
 // 첫 번째 트리거: div가 커지도록
+// gsap.set(resizeDiv, {  
+//     transform: "scale(0.5) translateY(0%)",
+// })
 gsap.to(resizeDiv, {
-    transform: "scale(1.5 , 1.5)",
-    transform: "translateY(30%)",
+    // transform: "scale(1.0 , 1.0) translateY(50%)",
+    scale:0.5,
+    y: -100,
     scrollTrigger: {
-        trigger: resizeDiv,
-        start: "top center",
-        end: "top -50px", 
+        trigger: '.main_1',
+        start: "top top",
+        end: "+=10px", 
+        scrub: 1, 
+        markers: true // 디버깅용
+    }
+});
+gsap.to(resizeDiv, {
+    // transform: "scale(1.0 , 1.0) translateY(50%)",
+    scale: 1.0,
+    y: 500,
+    scrollTrigger: {
+        markers: {
+            start: 'red',
+            end: 'red',
+        },
+        trigger: '.layerd_1',
+        start: "top top",
+        end: "+=600px", 
         scrub: 1, 
     }
 });
+// 
 // 두 번째 트리거: div가 작아지도록
 gsap.set(resizeDiv, {  
-    transform: "scale(1.5 , 1.5)",
-    transform: "translateY(30%)",
+    scale: 1.0,
+    y: 500,
+    transform: "scale(1.0) translateY(80%)",
 })
 gsap.to(resizeDiv, {
-    transform: "scale(0.5 , 0.5)",
-    transform: "translateY(30%)",
+    // transform: "scale(0.5 , 0.5) translateY(200%)",
+    scale: 0.5,
+    y: 1000,
     scrollTrigger: {
+        // markers: true,
         trigger: resizeDiv,
-        start: "center 50px",
-        end: "bottom center", 
-        scrub: 5, 
+        start: "top+=550px",
+        end: "+=1000px", 
+        scrub: true, 
     }
 });
 
-const resizeDiv2 = document.querySelector('.layerd_2_bg');
-
-// 첫 번째 트리거: div가 커지도록
-gsap.to(resizeDiv2, {
-    width: '100%',
-    height: '150vh',
-    position: 'sticky',
-    top: '100px',
-    scrollTrigger: {
-        trigger: resizeDiv2,
-        start: "top center",
-        end: "top -50px", 
-        scrub: 5, 
-    }
-});
-// 두 번째 트리거: div가 작아지도록
-gsap.set(resizeDiv2, {  
-    width: '100%',
-    height: '150vh',
-    position: 'sticky'
-})
-gsap.to(resizeDiv2, {
-    width: '50%',
-    height: '100vh',
-    scrollTrigger: {
-        trigger: resizeDiv2,
-        start: "center 50px",
-        end: "bottom center", 
-        scrub: 5, 
-    }
-});
-
-const resizeDiv3 = document.querySelector('.layerd_3_bg');
-
-// 첫 번째 트리거: div가 커지도록
-gsap.to(resizeDiv3, {
-    width: '100%',
-    height: '150vh',
-    position: 'sticky',
-    top: '100px',
-    scrollTrigger: {
-        trigger: resizeDiv3,
-        start: "top center",
-        end: "top -50px", 
-        scrub: 5, 
-    }
-});
-// 두 번째 트리거: div가 작아지도록
-gsap.set(resizeDiv3, {  
-    width: '100%',
-    height: '150vh',
-    position: 'sticky'
-})
-gsap.to(resizeDiv3, {
-    width: '50%',
-    height: '100vh',
-    scrollTrigger: {
-        trigger: resizeDiv3,
-        start: "center 50px",
-        end: "bottom center", 
-        scrub: 5, 
-    }
-});

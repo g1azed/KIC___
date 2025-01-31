@@ -42,38 +42,36 @@ gsap.to(".sec_establish_bg", {
 });
 
 
-/* 섹션 레이어드 */
-gsap.set(".layerd", { width: "60%", height: "60%", y: 500 });
-gsap.to(".layerd", {
-    height: "100%",
-    width: "100%",
-    ease: "none",
-    y: 0,
-    scrollTrigger: {
-        trigger: ".scroll_card_1",
-        start: 'center center',
-        end: '+=100',
-        scrub: 1,
-        // onleave / leave enter
-    }
-})
-gsap.utils.toArray(".layerd").forEach((panel, i) => {
-    ScrollTrigger.create({
-        trigger: panel,
-        start: "top center",
-        // end: () => "+=" + (window.innerHeight * 2 - 4),
-        end: 100,
-    });
-});
-
-// gsap.utils.toArray(".main_flex_secWrap").forEach((panel, i) => {
-//     ScrollTrigger.create({
-//         trigger: panel,
-//         start: "bottom bottom",
-//         end: () => "+=" + (window.innerHeight * 2 - 4),
-//     });
+/* 섹션 레이어드 백업*/
+// const resizeDiv = document.querySelector('.layerd_1_bg');
+// // 첫 번째 트리거: div가 커지도록
+// gsap.to(resizeDiv, {
+//     // transform: "scale(1.0 , 1.0) translateY(50%)",
+//     scale: 1.0,
+//     y: "100%",
+//     scrollTrigger: {
+//         trigger: resizeDiv,
+//         start: "top top",
+//         end: "+=500px", 
+//         scrub: 1, 
+//     }
 // });
-
+// // 두 번째 트리거: div가 작아지도록
+// gsap.set(resizeDiv, {  
+//     transform: "scale(1.0 , 1.0) translateY(100%)",
+// })
+// gsap.to(resizeDiv, {
+//     // transform: "scale(0.5 , 0.5) translateY(200%)",
+//     scale: 0.5,
+//     y: "200%",
+//     scrollTrigger: {
+//         markers: true,
+//         trigger: resizeDiv,
+//         start: "top+=600px",
+//         end: "+=1000px", 
+//         scrub: true, 
+//     }
+// });
 
 /* 마우스 커서 */
 // 
