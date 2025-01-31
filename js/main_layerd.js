@@ -35,7 +35,6 @@ gsap.to(resizeDiv, {
     transform: "scale(1.5 , 1.5)",
     transform: "translateY(30%)",
     scrollTrigger: {
-        // markers: true,
         trigger: resizeDiv,
         start: "top center",
         end: "top -50px", 
@@ -49,9 +48,8 @@ gsap.set(resizeDiv, {
 })
 gsap.to(resizeDiv, {
     transform: "scale(0.5 , 0.5)",
-    // transform: "translateY(30%)",
+    transform: "translateY(30%)",
     scrollTrigger: {
-        markers: true,
         trigger: resizeDiv,
         start: "center 50px",
         end: "bottom center", 
@@ -68,7 +66,6 @@ gsap.to(resizeDiv2, {
     position: 'sticky',
     top: '100px',
     scrollTrigger: {
-        // markers: true,
         trigger: resizeDiv2,
         start: "top center",
         end: "top -50px", 
@@ -85,7 +82,6 @@ gsap.to(resizeDiv2, {
     width: '50%',
     height: '100vh',
     scrollTrigger: {
-        markers: true,
         trigger: resizeDiv2,
         start: "center 50px",
         end: "bottom center", 
@@ -102,7 +98,6 @@ gsap.to(resizeDiv3, {
     position: 'sticky',
     top: '100px',
     scrollTrigger: {
-        // markers: true,
         trigger: resizeDiv3,
         start: "top center",
         end: "top -50px", 
@@ -119,7 +114,6 @@ gsap.to(resizeDiv3, {
     width: '50%',
     height: '100vh',
     scrollTrigger: {
-        markers: true,
         trigger: resizeDiv3,
         start: "center 50px",
         end: "bottom center", 

@@ -20,7 +20,7 @@ header{
 }
 .headerWrap{
     width: 100%;
-    padding: 6.4vw 5.3vw;
+    padding:24px 20px;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -28,7 +28,7 @@ header{
 
 }
 .header_logo{
-    width: 42.1vw;
+    width: 158px;
 }
 .header_logo img{
     width: 100%;
@@ -111,7 +111,7 @@ footer .footer_top ul li:nth-child(1){
     align-items: flex-end;
 }
 .footer_bottom p{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
@@ -132,7 +132,7 @@ footer .footer_top ul li:nth-child(1){
 
 /* head text */
 div.sec_main_t h4{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -141,7 +141,7 @@ div.sec_main_t h4{
     
 }
 div.sec_main_t p{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 22px;
@@ -182,10 +182,10 @@ div.sec_main_t p{
 .main_1_text{
     position: absolute;
     bottom:64px; left: 20px;
-    max-width: 43.38vw;
+    text-wrap: pretty;
 }
 .main_1_text h2{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
@@ -197,11 +197,11 @@ div.sec_main_t p{
 
 /* main_2  */
 .main_2{
-    padding: 62px 20px 0 20px; /* 120px */
+    padding: 62px 20px 62px 20px; /* 120px */
     background-color: #fff;
 }
 .main_2_text h3{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -214,7 +214,7 @@ div.sec_main_t p{
 }
 .main_2_text h3 span{ color: #0B3585; }
 .main_2_text p{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 22px;
@@ -257,9 +257,10 @@ div.sec_main_t p{
     align-items: center;
     flex-direction: column;
     z-index: 1;
+    padding: 20px;
 }
 .main_3 .flex_sec_text h4{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -275,24 +276,24 @@ div.sec_main_t p{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.625vw
+    gap: 12px;
 }
 .flex_sec_btnWrap p{
     color: #fff;
 }
 .flex_sec_text p{
-    /* font-family: Noto Sans CJK KR; */
-    font-size: 0.93vw;
+    font-family: "Noto Sans KR", serif;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.35vw;
+    line-height: 22px;
     letter-spacing: -0.1%;
     margin: 0.625vw 0 1.04vw 0;
 }
 .flex_sec_btnWrap p{
-    /* font-family: Roboto; */
-    font-size: 0.83vw;
+    font-family: Roboto;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.25vw;
+    line-height: 22px;
     letter-spacing: -0.1%;
 }
 .flex_sec_bg{
@@ -366,13 +367,15 @@ div.sec_main_t p{
     margin-top: 4.58vw;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 2.08vw 4.94vw;
+    padding: 40px 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1vw;
+    border: 1px solid #FFFFFF4D; 
+
 }
 .main_5_blur_boxInner{
     display: flex;
@@ -383,6 +386,7 @@ div.sec_main_t p{
 }
 .main_5_blur_box{
     position: relative;
+    width: 110px;
 }
 .main_5_blur_text{
     display: flex;
@@ -391,7 +395,7 @@ div.sec_main_t p{
     justify-content: center;
 }
 .main_5_blur_text p{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
@@ -402,7 +406,7 @@ div.sec_main_t p{
     
 }
 .main_5_blur_text div{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 40px;
     font-weight: 700;
     line-height: 48px;
@@ -412,18 +416,9 @@ div.sec_main_t p{
     text-decoration-skip-ink: none;
     
 }
-.main_5_blur_text div:nth-of-type(odd):after { content: ""; display: inline-block; width: 1px; height: 4.16vw; background-color: rgb(255, 255, 255, 0.4); position: absolute ; top: 0px; right: -100px; }
+.main_5_blur_text div:nth-of-type(odd):after { content: ""; display: inline-block; width: 2px; height: 30px; background-color: rgb(255, 255, 255, 0.4); position: absolute ; top: 20px; right: -24px; }
 .main_5_blur_box:last-child div::after{display: none;}
 
-.blur_section span{
-    /* font-family: Noto Sans KR; */
-    font-size: 0.83vw;;
-    font-weight: 400;
-    line-height: 1.25vw;
-    text-align: left;
-    display: block;
-    padding-top: 8px;
-}
 
 /* main_6 */
 .main_6{
@@ -439,7 +434,6 @@ div.sec_main_t p{
     margin-top: 2.6vw; 
 }
 .main_6_recruit_box{
-    /* padding: 2.08vw 1.56vw; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -490,7 +484,7 @@ div.sec_main_t p{
     z-index: 1;
 }
 .main_7 .flex_sec_text h4{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -501,6 +495,7 @@ div.sec_main_t p{
 .main_7 .flex_sec_text p{
     color: #ffffff;
     text-align: center;
+    text-wrap: pretty;
 }
 
 /* main_8 */
@@ -508,9 +503,6 @@ div.sec_main_t p{
     width: 100%;
     background-color: #fff;
     padding: 64px 20px;
-}
-.main_news_wrap{
-    /* margin: 6.25vw; */
 }
 .main_8_text_wrap > p{
     text-align: left !important;
@@ -521,7 +513,7 @@ div.sec_main_t p{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #121212;
-    padding-bottom: 2.08vw;
+    padding-bottom: 32px;
 }
 .news_head .flex_sec_btnWrap p{
     color: #121212;
@@ -534,10 +526,10 @@ div.sec_main_t p{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1.25vw;
+    gap: 12px;
 }
 .news_tab li button{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 22px;
@@ -548,17 +540,33 @@ div.sec_main_t p{
 }
 .news_tab li:nth-child(1) button{
     background: #0B3585;
-    padding: 0.57vw 1.71vw;
+    padding: 7px 20px;
     color: #fff;
     border-radius: 24px;
 }
+.news_tab li:nth-child(2) button{
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 7px 20px;
+    color: #666;
+    border-radius: 24px;
+}
+
+.news_tab li:nth-child(3) button{
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 7px 20px;
+    color: #666;
+    border-radius: 24px;
+}
+
 
 .news_box ul li{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2.08vw 1.04vw;
+    padding:16px 0;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
 }
@@ -570,7 +578,7 @@ div.sec_main_t p{
 
 }
 .news_box ul li p{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 22px;
@@ -581,7 +589,7 @@ div.sec_main_t p{
     text-align: left;
 }
 .news_box ul li span{
-    /* font-family: Noto Sans CJK KR; */
+    font-family: "Noto Sans KR", serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
@@ -640,16 +648,17 @@ div.sec_main_t p{
     padding: 64px 20px;
 }
 .photo_slide p{
-    font-size: 1.25vw;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.56vw;
+    line-height: 22px;
     letter-spacing: -0.1%;
-    padding: 12px 0 8px 0;
+    padding: 12px 0 0 0;
 }
 .photo_slide span{
-    font-size: 0.83vw;
+    color: #666;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.25vw;
+    line-height: 22px;;
     letter-spacing: -0.1%;
 }
 

@@ -16,24 +16,26 @@
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
+    <!-- AOS 라이브러리 추가 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="headerWrap">
-            <div class="header_logo"><a href="./main.html">  <img src="./assets/logo/KIC_LOGO_Blue.svg" /></a> </div>
+            <div class="header_logo"><a href="./main.html">  <img class="header_logo_img" src="./assets/logo/KIC_LOGO_White.svg" /></a> </div>
             <div class="header_content">
                 <ul>
-                    <li> <a class="sub_01_header_li" href="/"> 투자 </a> </li>
-                    <li> <a class="sub_01_header_li" href="/"> 뉴스 </a>  </li>
-                    <li> <a class="sub_01_header_li" href="/"> 정보공개 </a>  </li>
-                    <li> <a class="sub_01_header_li" href="/"> KIC 소개 </a>  </li>
-                    <li> <a class="sub_01_header_li" href="/"> 채용 </a>  </li>
+                    <li> <a href="/"> 투자 </a> </li>
+                    <li> <a href="/"> 뉴스 </a>  </li>
+                    <li> <a href="/"> 정보공개 </a>  </li>
+                    <li> <a href="/"> KIC 소개 </a>  </li>
+                    <li> <a href="/"> 채용 </a>  </li>
                 </ul>
             </div>
             <div class="header_iconWrap">
-                <button class="header_icon"> <img src="./assets/icon/KIC_search_Black.svg" /> </button>
-                <button class="header_icon"> <img src="./assets/icon/KIC_Language_icon_Black.svg" /> </button>
+                <button class="header_icon"> <img class="icon_search" src="./assets/icon/KIC_search_White.svg" /> </button>
+                <button class="header_icon"> <img class="icon_lang" src="./assets/icon/KIC_Language_icon_White.svg" /> </button>
             </div>
         </div>
     </header>
@@ -65,7 +67,7 @@
                 <h4 class="sub_01_h4 item">KIC의 투자철학 </h4>
                 <div class="sub_01_2_content item">
                     <ul>
-                        <li> 
+                        <li data-aos="fade-up"> 
                             <div class="sub_01_2_content_head">
                                 <span> 1 </span>
                                 <h6> KIC는 장기적 관점에서 투자합니다 </h6>
@@ -74,7 +76,7 @@
                                 장기투자를 통해 시장의 단기 변동성에 흔들리지 않고 장기적으로 높은 수익 실현이 가능한 투자를 실시합니다.
                             </p>
                         </li>
-                        <li> 
+                        <li data-aos="fade-up" data-aos-delay="200"> 
                             <div class="sub_01_2_content_head">
                                 <span> 2 </span>
                                 <h6> KIC는 내재가치에 기반하여 투자합니다 </h6>
@@ -83,7 +85,7 @@
                                 철저하고 체계적인 Valuation에 기초하여, 내재가치 대비 저평가된 종목을 발굴하여 투자를 실시합니다.
                             </p>
                         </li>
-                        <li> 
+                        <li data-aos="fade-up" data-aos-delay="400"> 
                             <div class="sub_01_2_content_head">
                                 <span> 3 </span>
                                 <h6> KIC는 철저한 리스크점검을 바탕으로 투자합니다</h6>
@@ -99,7 +101,7 @@
         <section class="sub_01_3">
             <div class="sub_01_3_inner">
                 <h4 class="sub_01_h4">KIC의 투자신념 </h4>
-                <div class="sub_01_3_img_wrap"> 
+                <div class="sub_01_3_img_wrap" data-aos="fade-up"> 
                     <img src="./assets/sub/KIC_belief.png" />
                 </div>
             </div>
@@ -121,7 +123,7 @@
                     </div>
                 </div>
 
-                <div class="invest_slide">
+                <div class="invest_slide" >
                     <div class="invest_item">
                         <div class="invest_item_inner">
                             <img src="./assets/sub/invest1.png" />
@@ -231,5 +233,10 @@
     </script>
 
     <script src="./js/sub_01.js"> </script>
+    <script src="./js/header_sub.js"> </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

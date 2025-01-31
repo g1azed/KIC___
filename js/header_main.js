@@ -3,34 +3,31 @@
 
 
 $(document).ready(function () {
-    $("#header").css('opacity','0')
-    // 스크롤 시 header fade-in
+
+    var prevScrollTop = 0;
     $(document).on('scroll', function(){
-        $("#header").css('opacity','0')
-            if($(window).width() >768){
-                if($(window).scrollTop() >= 4818){
-                $("#header").removeClass("deactive");
-                $("#header").addClass("active");
-
-                $("#header").css('opacity','1')
-                // $('.head_logo_p').attr('src', 'asset/header/hanrimLOGO_color.svg')
-                $('.head_logo_p').attr('src', 'https://g1azed.github.io/hallym/asset/header/hanrimLOGO_color.svg')
-                $('.langIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/KoreanIcon_b.svg')
-                $('.searchIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/SearchIcon_b.svg')
-                $('.menuIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/headerBarIcon_b.svg')
-            }else if($(window).scrollTop() <= 2424 && $(window).scrollTop() > -10){
-                $("#header").css('opacity','0')
-            }else{
-                $("#header").css('opacity','1')
-                $("#header").removeClass("active");
-                $("#header").addClass("deactive");
-
-                $('.head_logo_p').attr('src', 'https://g1azed.github.io/hallym/asset/header/hanrimLOGO.svg')
-                $('.langIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/KoreanIcon.svg')
-                $('.searchIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/SearchIcon.svg')
-                $('.menuIcon').attr('src', 'https://g1azed.github.io/hallym/asset/Icon/headerBarIcon.svg')
-            }
-        }   
+            
+        if($(window).scrollTop() >= 918){
+            var nowScrollTop = $(window).scrollTop(); //현재 스크롤 위치를 nowScrollTop 에 저장
+        
+            if (nowScrollTop > prevScrollTop){ $('header').addClass('active'); } 
+            // 스크롤 방향(Down) 내릴때 -> 헤더에 active 클래스 추가
+            else { $('header').removeClass('active'); } // 스크롤 방향(Up) 올릴때 -> 헤더에 active 클래스 제거
+            prevScrollTop = nowScrollTop;  // prevScroll, nowScrollTop 조건 판단 후, 현재 스크롤값을 prevScrollTop 에 저장
+            $("#header").css('background-color','#ffffff')
+            $(".header_content ul li a").css('color','#121212')
+            // $('.header_logo_img').attr('src', 'https://g1azed.github.io/KIC/assets/logo/KIC_LOGO_Blue.svg')
+            $('.header_logo_img').attr('src', './assets/logo/KIC_LOGO_Blue.svg')
+            $('.icon_search').attr('src', './assets/icon/KIC_search_Black.svg')
+            $('.icon_lang').attr('src', './assets/icon/KIC_Language_icon_Black.svg')
+        }else{
+            $("#header").css('background-color','transparent')
+            $(".header_content ul li a").css('color','#ffffff')
+            // $('.header_logo_img').attr('src', 'https://g1azed.github.io/KIC/assets/logo/KIC_LOGO_White.svg')
+            $('.header_logo_img').attr('src', './assets/logo/KIC_LOGO_White.svg')
+            $('.icon_search').attr('src', './assets/icon/KIC_search_White.svg')
+            $('.icon_lang').attr('src', './assets/icon/KIC_Language_icon_White.svg')
+        }
     })
 
 });
