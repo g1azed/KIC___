@@ -72,42 +72,46 @@ gsap.to('.sec_establish_bg', {
     }
 });
 
-
+// main background
 const resizeDiv = document.querySelector('.layerd_1_bg');
 const tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.layerd_1',
         start: "top top",
-        end: "+=1100px", // 전체 애니메이션 진행 길이
-        scrub: 1,
+        end: "+=1500px",
+        scrub: 2,
         toggleActions: "play reverse play reverse",
     }
 });
 
-// 1️⃣ 초기 설정 (scale: 0.5, y: 100)
 tl.set(resizeDiv, { scale: 0.5, y: 100 });
 
-// 2️⃣ `.layerd_1` 구간: 배경 커짐 (scale 1, y 300)
 tl.to(resizeDiv, {
     scale: 1,
     y: 300,
-}, "+=0"); // 즉시 실행
-
-// 3️⃣ `.layerd_1_text` 구간: y값 조정 (350)
-tl.to(resizeDiv, {
-    y: 350
+    duration: 2, 
 }, "+=0");
 
-
-// 4️⃣ 특정 지점에서 y값 400으로 변경
 tl.to(resizeDiv, {
+    width: '100%',
+    height: '200vh',
+    y: 350,
+    duration: 2, 
+}, "+=0");
+
+tl.to(resizeDiv, {
+    width: '100%',
+    height: '200vh',
     y: 400,
+    duration: 2, 
 }, "+=0");
 
-// 5️⃣ 배경이 점점 작아짐 (scale: 0.5, y: 500)
 tl.to(resizeDiv, {
+    width: '100%',
+    height: '200vh',
     scale: 0.5,
     y: 500,
+    duration: 2, 
 });
 
 
@@ -116,33 +120,40 @@ const tl_1 = gsap.timeline({
     scrollTrigger: {
         trigger: '.layerd_2',
         start: "top top",
-        end: "+=1100px", // 전체 애니메이션 진행 길이
-        scrub: 1,
+        end: "+=1500px", 
+        scrub: 2,
         toggleActions: "play reverse play reverse",
     }
 });
 
-// 1️⃣ 초기 설정 (scale: 0.5, y: 100)
 tl_1.set(resizeDiv2, { scale: 0.5, y: 100 });
 
-// 2️⃣ `.layerd_1` 구간: 배경 커짐 (scale 1, y 300)
 tl_1.to(resizeDiv2, {
     scale: 1,
     y: 300,
-}, "+=0"); // 즉시 실행
+}, "+=0"); 
 
-// 3️⃣ `.layerd_1_text` 구간: y값 조정 (350)
+
 tl_1.to(resizeDiv2, {
+    width: '100%',
+    height: '200vh',
+    duration: 2, 
     y: 350
 }, "+=0");
 
 // 4️⃣ 특정 지점에서 y값 400으로 변경
 tl_1.to(resizeDiv2, {
+    width: '100%',
+    height: '200vh',
+    duration: 2, 
     y: 400,
 }, "+=0");
 
 // 5️⃣ 배경이 점점 작아짐 (scale: 0.5, y: 500)
 tl_1.to(resizeDiv2, {
+    width: '100%',
+    height: '200vh',
+    duration: 2, 
     scale: 0.5,
     y: 500,
 });
@@ -154,7 +165,7 @@ const tl_3 = gsap.timeline({
         trigger: '.layerd_3',
         start: "top top",
         end: "+=1200px", // 전체 애니메이션 진행 길이
-        scrub: 1,
+        scrub: 2,
         toggleActions: "play reverse play reverse",
     }
 });
@@ -170,11 +181,17 @@ tl_3.to(resizeDiv3, {
 
 // 3️⃣ `.layerd_1_text` 구간: y값 조정 (350)
 tl_3.to(resizeDiv3, {
+    width: '100%',
+    height: '200vh',
+    duration: 2, 
     y: 350
 }, "+=0");
 
 // 4️⃣ 특정 지점에서 y값 400으로 변경
 tl_3.to(resizeDiv3, {
+    width: '100%',
+    height: '200vh',
+    duration: 2, 
     // y: 600,
 }, "+=0");
 
