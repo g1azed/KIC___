@@ -239,7 +239,7 @@ div.sec_main_t p{
 }
 .main_4{
     width: 100%;
-    height: 1080px;
+    height: 900px;
     overflow: hidden;
     position: relative;
     padding: 9.25vw 0 0 6.25vw;
@@ -388,7 +388,7 @@ div.sec_main_t p{
     line-height: 78px;
     letter-spacing: -0.1%;
 }
-.main_5_blur_text div::after { content: ""; display: inline-block; width: 1px; height: 4.16vw; background-color: rgb(255, 255, 255, 0.4); position: absolute ; top: 0px; right: -100px; }
+.main_5_blur_text div::after { content: ""; display: inline-block; width: 1px; height: 4.16vw; background-color: rgb(255, 255, 255, 0.4); position: absolute ; top: 0.78vw; right: -5.2vw; }
 .main_5_blur_box:last-child div::after{display: none;}
 
 .blur_section span{

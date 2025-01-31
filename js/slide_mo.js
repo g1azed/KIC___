@@ -1,12 +1,12 @@
 $(document).ready(function(){
     $('.main_4_slick_wrap').slick({
-        // centerMode: true,
-        // centerPadding: '40px',
+        centerMode: true,
+        centerPadding: '40px',
         slidesToShow: 1,
         arrows: false,
         infinite: true,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 800,
 
     });
 
