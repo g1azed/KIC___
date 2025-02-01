@@ -137,7 +137,7 @@ div.sec_main_t p {
 
 /* main_3 */
 .main_3 {
-    height: 550vh;
+    height: 520vh;
     max-height: 700vh;
     font-size: 0;
     overflow: hidden;
@@ -245,7 +245,7 @@ div.sec_main_t p {
     border-radius: 10px;
 }
 .layerd_3_text {
-    bottom: 25%;
+    bottom: 50%;
 }
 
 /* main_4 */
@@ -461,6 +461,7 @@ div.sec_main_t p {
     height: 14.84vw;
     border: 2px solid rgba(204, 204, 204, 1);
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
 .recruit_text {
