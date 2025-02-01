@@ -209,7 +209,7 @@ const tl_3 = gsap.timeline({
     scrollTrigger: {
         trigger: '.layerd_3',
         start: "top center",
-        end: "+=900px", 
+        end: "+=1500px", 
         scrub: 1,
         toggleActions: "play none none none",
     }
@@ -235,7 +235,7 @@ tl_3.to(resizeDiv3, {
 }, "+=0");
 tl_3.to(resizeDiv3, {
     scale: 1,
-    // duration: 1, 
+    duration: 1, 
     y: 400,
     immediateRender: false,
 }, "+=0");
