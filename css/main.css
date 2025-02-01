@@ -249,25 +249,29 @@ div.sec_main_t p {
 }
 
 /* main_4 */
-@keyframes cursorRotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+/* 커스텀 커서 스타일 */
+.custom-cursor {
     z-index: 10;
-    transform: translate3d(-50%, -50%, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    /* animation: cursorRotate 4s infinite linear; */
+    position: absolute;
+    width: 150px;  /* 이미지 크기에 맞게 조절 */
+    height: 150px;
+    transform: translate(-50%, -50%); 
+}
+.custom-cursor img{
+    animation: rotate 2s linear infinite;
+}
+.custom-cursor.clicked {
+    transform: translate(-50%, -50%) scale(0.8); 
+}
+
+@keyframes rotate {
+    from {
+        transform:  rotate(0deg);
+    }
+    to {
+        transform:  rotate(360deg);
+    }
 }
 .main_4 {
     width: 100%;
@@ -275,9 +279,7 @@ div.sec_main_t p {
     overflow: hidden;
     position: relative;
     padding: 9.25vw 0 0 6.25vw;
-    /* cursor: none; */
-    /* cursor: url('./assets/icon/slide_cursor.svg'), auto; */
-    /* 마우스 커서 rotation 애니메이션 하려면 js 추가해야함 일단 보류 */
+    cursor: none;
 }
 .main_4_text_wrap {
     position: absolute;

@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const text = child.textContent;
                 const frag = document.createDocumentFragment();
                 for (let i = 0; i < text.length; i++) {
-
                     const span = document.createElement("span");
                     span.textContent = text[i];
                     span.style.animationDelay = letterIndex * 0.05 + "s";
@@ -93,7 +92,57 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
     // h2 내부를 일반 속도(false)부터 시작하여 처리
     wrapTextNodes(h2, false);
+
+    // 마우스 커서
+    const container = document.getElementById("cursorContainer");
+    const customCursor = document.getElementById("customCursor");
+
+    // 실제 마우스 좌표(목표 위치)
+    let targetX = 0;
+    let targetY = 0;
+    // 커스텀 커서의 현재 좌표
+    let currentX = 0;
+    let currentY = 0;
+    // 선형 보간(Lerp) 비율 (0 ~ 1, 값이 작을수록 느리게 따라감)
+    const lerpFactor = 0.1;
+
+    // 마우스 이동 이벤트: 목표 좌표 갱신
+    container.addEventListener("mousemove", (e) => {
+        // 컨테이너의 위치(오프셋)를 고려하여 좌표 보정
+        const rect = container.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+    });
+
+    // 클릭 이벤트: 클릭 시 커스텀 커서에 'clicked' 클래스를 추가하고 잠시 후 제거
+    container.addEventListener('mousedown', () => {
+        customCursor.classList.add('clicked');
+    });
+    container.addEventListener('mouseup', () => {
+        customCursor.classList.remove('clicked');
+    });
+
+
+    // 영역을 벗어나면 커스텀 커서를 숨깁니다.
+    container.addEventListener("mouseleave", () => {
+        customCursor.style.opacity = "0";
+    });
+    container.addEventListener("mouseenter", () => {
+        customCursor.style.opacity = "1";
+    });
+
+    // 애니메이션 루프: 커스텀 커서 위치를 보간하여 업데이트
+    function animateCursor() {
+        // 현재 위치를 목표 위치로 보간하여 이동 (lerp)
+        currentX += (targetX - currentX) * lerpFactor;
+        currentY += (targetY - currentY) * lerpFactor;
+
+        customCursor.style.left = currentX + "px";
+        customCursor.style.top = currentY + "px";
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
 });
