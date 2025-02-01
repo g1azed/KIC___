@@ -11,7 +11,7 @@ main{
 .sub_02_1_text{
     width: 100%;
     height: 100vh;
-    background-image: url("./assets/sub/sub_2_main.png");
+    background-image: url("../assets/sub/sub_2_main.png");
     background-size: 100%;
     color: #fff;
     display: flex;
@@ -69,7 +69,7 @@ main{
     margin-top: 3.3vw;
     width: 100%; 
     height: 20.833vw;
-    background-image: url("./assets/sub/sub_2_sub_img.png")
+    background-image: url("../assets/sub/sub_2_sub_img.png")
 }
 
 .sub-banner-w{
