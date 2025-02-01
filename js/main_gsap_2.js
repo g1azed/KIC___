@@ -73,21 +73,22 @@ gsap.to('.sec_establish_bg', {
 });
 
 // main background
+// 지배구조
 const resizeDiv = document.querySelector('.layerd_1_bg');
 const tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.sec_establish',
         start: "top top",
-        end: "+=1500px",
+        end: "+=2500px",
         scrub: 2,
         toggleActions: "play reverse play reverse",
     }
 });
 
-tl.set(resizeDiv, { scale: 0.8, y: 100 });
+tl.set(resizeDiv, { scale: 0.3, y: 100 });
 
 tl.to(resizeDiv, {
-    scale: 1,
+    scale: 0.7,
     y: 300,
     duration: 2, 
 }, "+=0");
@@ -95,6 +96,7 @@ tl.to(resizeDiv, {
 tl.to(resizeDiv, {
     width: '100%',
     height: '200vh',
+    scale: 1.0,
     y: 350,
     duration: 2, 
 }, "+=0");
@@ -102,6 +104,7 @@ tl.to(resizeDiv, {
 tl.to(resizeDiv, {
     width: '100%',
     height: '200vh',
+    scale: 1.0,
     y: 400,
     duration: 2, 
 }, "+=0");
@@ -110,33 +113,44 @@ tl.to(resizeDiv, {
     width: '100%',
     height: '200vh',
     scale: 0.8,
+    y: 470,
+    duration: 2, 
+});
+
+tl.to(resizeDiv, {
+    width: '100%',
+    height: '200vh',
+    scale: 0.6,
     y: 500,
     duration: 2, 
 });
 
-
+// 투자철학 & 정책
 const resizeDiv2 = document.querySelector('.layerd_2_bg');
 const tl_1 = gsap.timeline({
     scrollTrigger: {
         trigger: '.layerd_2',
-        start: "top top",
-        end: "+=1500px", 
+        start: "top center",
+        end: "+=2500px", 
         scrub: 2,
         toggleActions: "play reverse play reverse",
+        markers: true,
     }
 });
 
-tl_1.set(resizeDiv2, { scale: 0.8, y: 100 });
+tl_1.set(resizeDiv2, { scale: 0.3, y: 0 });
 
 tl_1.to(resizeDiv2, {
-    scale: 1,
-    y: 300,
+    height: '200vh',
+    scale: 0.7,
+    y: 100,
 }, "+=0"); 
 
 
 tl_1.to(resizeDiv2, {
     width: '100%',
     height: '200vh',
+    scale: 1.0,
     duration: 2, 
     y: 350
 }, "+=0");
@@ -145,16 +159,26 @@ tl_1.to(resizeDiv2, {
 tl_1.to(resizeDiv2, {
     width: '100%',
     height: '200vh',
+    scale: 1.0,
     duration: 2, 
     y: 400,
 }, "+=0");
+
+tl_1.to(resizeDiv2, {
+    width: '100%',
+    height: '200vh',
+    scale: 0.8,
+    y: 470,
+    duration: 2, 
+});
+
 
 // 5️⃣ 배경이 점점 작아짐 (scale: 0.8, y: 500)
 tl_1.to(resizeDiv2, {
     width: '100%',
     height: '200vh',
     duration: 2, 
-    scale: 0.8,
+    scale: 0.6,
     y: 500,
 });
 
@@ -163,19 +187,19 @@ const resizeDiv3 = document.querySelector('.layerd_3_bg');
 const tl_3 = gsap.timeline({
     scrollTrigger: {
         trigger: '.layerd_3',
-        start: "top top",
-        end: "+=1200px", // 전체 애니메이션 진행 길이
+        start: "top center",
+        end: "+=1700px", // 전체 애니메이션 진행 길이
         scrub: 2,
         toggleActions: "play reverse play reverse",
     }
 });
 
 // 1️⃣ 초기 설정 (scale: 0.8, y: 100)
-tl_3.set(resizeDiv3, { scale: 0.8, y: 100 });
+tl_3.set(resizeDiv3, { scale: 0.3, y: 0 });
 
 // 2️⃣ `.layerd_1` 구간: 배경 커짐 (scale 1, y 300)
 tl_3.to(resizeDiv3, {
-    scale: 1,
+    scale: 0.7,
     y: 300,
 }, "+=0"); // 즉시 실행
 
@@ -183,6 +207,7 @@ tl_3.to(resizeDiv3, {
 tl_3.to(resizeDiv3, {
     width: '100%',
     height: '200vh',
+    scale: 1,
     duration: 2, 
     y: 350
 }, "+=0");
@@ -191,8 +216,9 @@ tl_3.to(resizeDiv3, {
 tl_3.to(resizeDiv3, {
     width: '100%',
     height: '200vh',
+    scale: 1,
     duration: 2, 
-    // y: 600,
+    y: 600,
 }, "+=0");
 
 
@@ -206,7 +232,6 @@ gsap.utils.toArray(".reveal").forEach((element) => {
         { y: "100%", opacity: 0 }, 
         { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
             scrollTrigger: {
-                markers: true,
                 trigger: '.layered',
                 start: "top center", 
                 toggleActions: "restart none restart restart"

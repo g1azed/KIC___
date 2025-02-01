@@ -138,7 +138,7 @@ div.sec_main_t p{
 /* main_3 공용 */
 .main_flex_secWrap{
     margin: 100px 0;
-    height: 200vh;
+    /* height: 200vh; */
     position: static;
 }
 .main_flex_sec{
