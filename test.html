@@ -1,93 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP ScrollTrigger Text Reveal</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #111;
-            color: white;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <title>타이핑 애니메이션</title>
+  <style>
+.main_1_text h2 {
+  font-family: "Noto Sans KR", serif;
+  font-size: 2.5vw; /* 예: 48px */
+  font-weight: 700;
+  line-height: 3.33vw; /* 예: 64px */
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: #121212;
+}
 
-        .spacer {
-            height: 100vh;
-        }
+/* 각 글자에 적용될 기본 애니메이션 설정 */
+.main_1_text h2 span {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s; /* 기본 애니메이션 속도 */
+}
 
-        .text-container {
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-        }
-
-        .reveal-text {
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        .reveal-text span {
-            display: inline-block;
-            transform: translateY(100%);
-        }
-    </style>
+/* fadeIn 애니메이션: opacity가 0에서 1로 */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+  </style>
 </head>
 <body>
+  <div class="main_1_text">
+    <h2>
+      KIC는 자연·사람·기술이 함께하는 <br />
+      세상을 위해 투자합니다.
+    </h2>
+  </div>
 
-    <div class="spacer"></div>
-
-    <div class="text-container">
-        <span class="reveal-text">Hello,</span>
-        <span class="reveal-text">this</span>
-        <span class="reveal-text">is</span>
-        <span class="reveal-text">a</span>
-        <span class="reveal-text">scroll-triggered</span>
-        <span class="reveal-text">text</span>
-        <span class="reveal-text">reveal</span>
-        <span class="reveal-text">animation!</span>
-    </div>
-
-    <div class="spacer"></div>
-
-    <div class="text-container">
-        <span class="reveal-text">Another</span>
-        <span class="reveal-text">set</span>
-        <span class="reveal-text">of</span>
-        <span class="reveal-text">revealing</span>
-        <span class="reveal-text">words.</span>
-    </div>
-
-    <div class="spacer"></div>
-
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray(".reveal-text").forEach((element) => {
-            let word = element.innerText;
-            element.innerHTML = `<span>${word}</span>`;
-            
-            gsap.fromTo(element.querySelector("span"), 
-                { y: "100%", opacity: 0 }, 
-                { y: "0%", opacity: 1, duration: 1, ease: "power2.out", 
-                  scrollTrigger: {
-                      trigger: element,
-                      start: "top 80%", 
-                      toggleActions: "play none none none"
-                  }
-                }
-            );
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const h2 = document.querySelector('.main_1_text h2');
+      let letterIndex = 0; // 전체 글자 순서를 위한 카운터
+    
+      // 텍스트 노드를 재귀적으로 처리하는 함수
+      // isSlow: 현재 요소가 'slow' 클래스로 지정되어 있는지 여부
+      function wrapTextNodes(element, isSlow = false) {
+        const nodes = Array.from(element.childNodes);
+        nodes.forEach(child => {
+          if (child.nodeType === Node.TEXT_NODE) {
+            const text = child.textContent;
+            const frag = document.createDocumentFragment();
+            for (let i = 0; i < text.length; i++) {
+              const span = document.createElement('span');
+              span.textContent = text[i];
+              // 누적 딜레이: 예) 0.1초 간격
+              span.style.animationDelay = (letterIndex * 0.1) + "s";
+              // 만약 현재 요소가 slow라면 애니메이션 지속시간을 더 길게 지정
+              if (isSlow) {
+                span.style.animationDuration = "1.5s"; // 느린 애니메이션 (예시)
+              }
+              letterIndex++;
+              frag.appendChild(span);
+            }
+            element.replaceChild(frag, child);
+          } else if (child.nodeType === Node.ELEMENT_NODE) {
+            // <br> 태그는 그대로 둡니다.
+            if (child.tagName.toLowerCase() === 'br') {
+              return;
+            } else {
+              // 자식 요소에 slow 클래스가 있으면 isSlow 플래그를 true로 전달
+              let childIsSlow = isSlow;
+              if (child.classList.contains('slow')) {
+                childIsSlow = true;
+              }
+              wrapTextNodes(child, childIsSlow);
+            }
+          }
         });
+      }
+    
+      // h2 내부의 텍스트를 처리 (최상위는 slow 아님)
+      wrapTextNodes(h2, false);
+    });
     </script>
-
+    
 </body>
 </html>

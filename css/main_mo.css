@@ -174,7 +174,7 @@ div.sec_main_t p{
 }
 .main_1_bg video{
     position: absolute;
-    left: 50%; top: 50%;
+    left: 100%; top: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
@@ -352,7 +352,7 @@ div.sec_main_t p{
 .main_5{
     width: 100%;
     /* height: 750px; */
-    background: url("./assets/background/main_5_bg.png");
+    background: url("../assets/background/main_5_bg.png");
     background-position: 100% 33%;
     background-attachment: fixed;
     background-size: 100%;
@@ -478,7 +478,7 @@ div.sec_main_t p{
     width: 100%;
     height: 538px;
     padding: 0 20px;
-    background-image: url('./assets/background/main_7_bg.png');
+    background-image: url('../assets/background/main_7_bg.png');
     display: flex;
     justify-content: center;
     align-items: center;

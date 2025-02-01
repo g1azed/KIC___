@@ -24,7 +24,7 @@ $(document).ready(function(){
     $('.photo_slideWrap').slick({
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 800,
+        autoplaySpeed: 1200,
         arrows: false,
         slidesToShow: 3,
         slidesToScroll: 1,

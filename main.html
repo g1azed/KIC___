@@ -6,8 +6,8 @@
     <title>한국투자공사 메인</title>
 
     <link href="./reset.css" rel="stylesheet" />
-    <link href="./hf.css" rel="stylesheet" />
-    <link href="./main.css" rel="stylesheet" />
+    <link href="./css/hf.css" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
 
 
     <!-- noto sans kr -->
@@ -17,12 +17,12 @@
 
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
+    
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="headerWrap">
-            <div class="header_logo"><a href="./main.html">  <img src="./assets/logo/KIC_LOGO_White.svg" /></a> </div>
+            <div class="header_logo"><a href="./main.html">  <img class="header_logo_img" src="./assets/logo/KIC_LOGO_White.svg" /></a> </div>
             <div class="header_content">
                 <ul>
                     <li> <a href="/"> 투자 </a> </li>
@@ -33,23 +33,23 @@
                 </ul>
             </div>
             <div class="header_iconWrap">
-                <button class="header_icon"> <img src="./assets/icon/KIC_search_White.svg" /> </button>
-                <button class="header_icon"> <img src="./assets/icon/KIC_Language_icon_White.svg" /> </button>
+                <button class="header_icon"> <img class="icon_search" src="./assets/icon/KIC_search_White.svg" /> </button>
+                <button class="header_icon"> <img class="icon_lang" src="./assets/icon/KIC_Language_icon_White.svg" /> </button>
             </div>
         </div>
     </header>
-
+<!--  -->
     <main>
         <section class="main_section main_1">
             <div class="main_1_wrap">
                 <div class="main_1_bg">
                     <video autoplay loop muted>
-                        <source src="https://s3-figma-videos-production-sig.figma.com/video/1251535565323813858/TEAM/829d/ad32/-81ba-4e86-888f-7116cba075fc?Expires=1738540800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z~gC6Z4ybllikuj8hDRi~NMa9BcP1J5bcQyEVowTiA3RpcMVuWg3Ljj7zwqICqYsjpcORdtprbEUBPt6w-qg6orLV7eM6~l2KfMY~Q6hYgPCvc3KnLf704Ssfb87S1ShhBi1PLQcZQMRsQXZB4n9k5J8zvJbU3UWFonfZh-JBbZBFsOXkEjrrPl4Goq0fhvamiqdNCuQkgYpdjaGEUGKRPVlLPcoMG5r35QeyzFYCp2JIpgWq12ytbE4Z5gKDRYpUvqKbupln54gpOS2tVvPj-JVz-e8PYLtjAL5D6IJXZXzP4A-uMAz-byboc19Kx1xuwa5chmdNH1a8yzCY-SQFw__"/>
+                        <source src="https://s3-figma-videos-production-sig.figma.com/video/TEAM/1093692944360466835/d4c32a29908e747927ed0b6aa9e072a3ee42e986?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=TKQrnOwyErVGDaDu-~-yWx501HnKvAAD~VUcwoSn29O1dSiNlUp0SfxR3CIaBFfOjhBo1eyIjNB7BR3e94-PRpnWG5pUrO77F2ViL1f2SKHDhSx6aGvCu9XTdqW5~vhxPTOm4Lhvl0dYLhn9mE766CLs1gLr85FryM5PPSHjANqslqu9K6y35yjhUTr5n44LHkdPdNdAd1HKKINqj7VFSVP71GgUYNuR4k2XpBOPiXgbrgNrEGVk1mZFboUf7DV873OwKhGjCiySOrfmwdxPeL~sR4Q3FprkrpZz3tNQJEd-uL4Il8vZbRNeaWpnaefvadDJiwxmEmfWX2PCb2QyQg__"/>
                     </video>
                 </div>
                 <div class="main_1_text">
-                    <h2>금융산업의 미래를 열어갑니다. <br/>
-                        대한민국 미래경제의 주춧돌이 되겠습니다. 
+                    <h2>KIC는  <span class="slow">자연·사람·기술 </span>이 함께하는 <br />
+                        세상을 위해 투자합니다.
                     </h2>
                 </div>
             </div>
@@ -65,11 +65,10 @@
                     금융산업의 발전에 이바지하고자 설립되었습니다.</p>
             </div>
         </section>
-
         <section class="main_section main_3">
-                <div class="main_flex_sec sec_establish"> 
+                <div class=" sec_establish"> 
                     <div class="flex_sec_text sec_esta_text">
-                        <h4 class="for_esta"> 설립목적 </h4>
+                        <h4 class="for_esta line "> 설립목적 </h4>
                         <p>위탁받은 자산의 운용업무를 효율적으로 수행하여 <br/>
                             금융산업 발전에 기여하고자 설립되었습니다. 
                         </p>
@@ -82,54 +81,54 @@
                         <img src="./assets/background/main_3_bg.png" />
                     </div>
                 </div>
-            <div class="main_flex_secWrap scroll_card_1">
-                <div class="layerd main_flex_sec"> 
-                    <div class="esta_text flex_sec_text">
-                        <h4> 지배구조 </h4>
-                        <p>투자의 독립성과 자율성을 보장받는 지배구조를
+            <div class="main_flex_secWrap">
+                <div class="layered layerd_1 main_flex_sec"> 
+                    <div class="layerd_1_text flex_sec_text">
+                        <h4 class="reveal"> 지배구조 </h4>
+                        <p class="reveal">투자의 독립성과 자율성을 보장받는 지배구조를
                             확립합니다. 
                         </p>
                         <button class="flex_sec_btnWrap main_3_btnWrap">
-                            <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
+                            <img class="reveal" src="./assets/icon/more_view_arrow_icon_white.svg"/>
                             <p> More View </p>
                         </button>
                     </div> 
-                    <div class="flex_sec_bg">
+                    <div class="layerd_1_bg flex_sec_bg">
                         <img src="./assets/background/main_3_2_bg.png" />
                     </div>
                 </div>
             </div>
             <div class="main_flex_secWrap">
-                <div class="layerd main_flex_sec"> 
-                    <div class="flex_sec_text">
-                        <h4> 투자철학 & 정책 </h4>
-                        <p>장기적 관점에서 내재가치에 기반하고 철저한 리스크 관점을
+                <div class="layered layerd_2 main_flex_sec"> 
+                    <div class="layerd_2_text flex_sec_text">
+                        <h4 class="reveal"> 투자철학 & 정책 </h4>
+                        <p class="reveal">장기적 관점에서 내재가치에 기반하고 철저한 리스크 관점을
                             바탕으로 하는 KIC의 투자철학과 정책
                         </p>
                         <button class="flex_sec_btnWrap main_3_btnWrap">
                             <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
-                            <p> More View </p>
+                            <p > More View </p>
                         </button>
                     </div> 
-                    <div class="flex_sec_bg">
+                    <div class="layerd_2_bg flex_sec_bg">
                         <img src="./assets/background/main_3_3_bg.png" />
                     </div>
                 </div>
             </div>
 
             <div class="main_flex_secWrap">
-                <div class="layerd main_flex_sec"> 
-                    <div class="flex_sec_text">
-                        <h4> 비전 </h4>
-                        <p>신뢰(TRUST)를 바탕으로 국부를 증대시켜 나가는
+                <div class="layered layerd_3 main_flex_sec"> 
+                    <div class="layerd_3_text flex_sec_text">
+                        <h4 class="reveal"> 비전 </h4>
+                        <p class="reveal">신뢰(TRUST)를 바탕으로 국부를 증대시켜 나가는
                             세계 일류 투자기관으로 도약
                         </p>
                         <button class="flex_sec_btnWrap main_3_btnWrap">
                             <img src="./assets/icon/more_view_arrow_icon_white.svg"/>
-                            <p> More View </p>
+                            <p class="reveal"> More View </p>
                         </button>
                     </div> 
-                    <div class="flex_sec_bg">
+                    <div class="layerd_3_bg flex_sec_bg">
                         <img src="./assets/background/main_3_4_bg.png" />
                     </div>
                 </div>
@@ -388,11 +387,6 @@
                         <p>‘국부펀드 공모전’ 시상식 개최  </p>
                         <span>2023.11.02 </span>
                     </div>
-                    <div class="photo_slide">
-                        <img src="./assets/main/slide_img/photo_slide_img_3.png" />
-                        <p>청소년 금융투자교육 재능기부’ 봉사활동 실시   </p>
-                        <span>2023.11.14 </span>
-                    </div>
                 </div>
             </div>
         </section>
@@ -435,7 +429,6 @@
 	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 	<script src="https://assets.codepen.io/16327/ScrollTrigger.min.js?v=32"></script>
-    <script src="./js/main_gsap.js"></script>
 
     <!-- slick -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -450,8 +443,11 @@
     <script src='https://cdn.rawgit.com/cferdinandi/smooth-scroll/aad0d74d4d97d9ca8e1323356abded9d5770a714/dist/js/smooth-scroll.min.js'></script>
     <script  src="./js/countup.js"></script>
 
-        <!-- main -->
-        <script src="./js/main.js"></script>
+    <!-- main -->
+    <script src="./js/main_gsap_2.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/header_main.js"></script>
+
 
 </body>
 </html>
