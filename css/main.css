@@ -252,11 +252,12 @@ div.sec_main_t p {
 
 /* 커스텀 커서 스타일 */
 .custom-cursor {
-    z-index: 10;
+    z-index: 3;
     position: absolute;
     width: 150px;  /* 이미지 크기에 맞게 조절 */
     height: 150px;
     transform: translate(-50%, -50%); 
+    pointer-events: none;
 }
 .custom-cursor img{
     animation: rotate 2s linear infinite;
@@ -283,20 +284,22 @@ div.sec_main_t p {
 }
 .main_4_text_wrap {
     position: absolute;
-    z-index: 5;
+    z-index: 1;
 }
-.slide_btnWrap {
+.main_4 .slide_btnWrap {
     margin-top: 2.08vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+    /* cursor: none; */
 }
-.slide_btn {
+.main_4 .slide_btn {
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 26px;
+    cursor: none !important;
 }
 .slide_btn div {
     display: inline;
