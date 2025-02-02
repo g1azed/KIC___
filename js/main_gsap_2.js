@@ -289,7 +289,7 @@ function revealTextAnimation() {
                 trigger: '.layerd_1_text',
                 start: "top bottom",
                 end: "+=200px",
-                toggleActions: "play pause play  reverse",
+                // toggleActions: "play pause play  reverse",
             },
         });
         tl.fromTo(
@@ -322,7 +322,7 @@ function revealTextAnimation() {
                 start: "top center",
                 end: "+=200px",
                 // pin: true,
-                toggleActions: "play pause play  reverse",
+                // toggleActions: "play reverse play  reverse",
             },
         });
         tl.fromTo(
@@ -353,7 +353,7 @@ function revealTextAnimation() {
                 trigger: container,
                 start: "top-=300px center",
                 end: "+=200px",
-                toggleActions: "play pause play  reverse",
+                // toggleActions: "play reverse play  reverse",
             },
         });
         tl.fromTo(

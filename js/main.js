@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (child.nodeType === Node.TEXT_NODE) {
                 const text = child.textContent;
                 const frag = document.createDocumentFragment();
+                let lastDelay = currentDelay;
     
                 for (let i = 0; i < text.length; i++) {
                     const span = document.createElement("span");
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     span.style.animationDelay = `${delay}s`;
                     span.style.animationDuration = `${duration}s`;
                     span.style.animationTimingFunction = "ease-out"; // ✅ 자연스럽게 느려지도록 설정
+                    span.style.animationFillMode = "forwards"; // ✅ 애니메이션 종료 후 `opacity: 1` 유지
     
                     letterIndex++; // 전체 글자 인덱스 증가
                     frag.appendChild(span);
