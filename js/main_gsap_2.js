@@ -95,24 +95,29 @@ const tl_1 = gsap.timeline({
     scrollTrigger: {
         trigger: ".sec_establish",
         start: "center center",
-        end: "+=1700px",
+        end: "+=2000px", // 🔥 전체 애니메이션 길이 증가 (기존 1700px → 2000px)
         scrub: 2,
-        toggleActions: "play reverse play  reverse",
+        toggleActions: "play reverse play reverse",
     },
 });
+
+// 초기 설정
 tl_1.set(resizeDiv, {
     width: "100%",
-    height: "160vh",
+    height: "150vh",
     scaleX: 0.8,
-    // borderRadius: "80px",
+    borderRadius: "70px",
     duration: 3,
     force3D: true,
 });
-tl_1.to(resizeDiv,{
+
+// scaleX 1로 확장
+tl_1.to(resizeDiv, {
     width: "100%",
-    height: "160vh",
-    scale: 1,
-    duration: 3,
+    height: "150vh",
+    borderRadius: "0",
+    scaleX: 1,
+    duration: 5,
     scrub: 3,
     immediateRender: false,
     onUpdate: function () {
@@ -123,33 +128,30 @@ tl_1.to(resizeDiv,{
             textAnimationTriggered = true; // 중복 실행 방지
             revealTextAnimation();
         }
-    },
-
+    }
 }, "+=0");
-tl_1.to( resizeDiv, {
-    width: "100%",
-    height: "160vh",
-    scale: 1,
-    duration: 1,
-    scrub: 3,
-    immediateRender: false,
-},"+=0");
-tl_1.to( resizeDiv, {
-    width: "100%",
-    height: "160vh",
-    scale: 0.9,
-    duration: 1,
-    scrub: 3,
-    borderRadius: "90px",
-    immediateRender: false,
-},"+=0");
+
+// 🛑 ✅ scaleX: 1 상태를 **40% 유지**
 tl_1.to(resizeDiv, {
-    width: "90%",
-    height: "160vh",
-    borderRadius: "80px",
-    scale: 0.7,
-    scrub: 3,
+    width: "100%",
+    height: "150vh",
+    borderRadius: "0",
+    scaleX: 1,
+    yPercent: -10,
+    duration: 4,  // 🔥 유지 시간 추가
+}, "+=0");
+
+// 이후 scaleX 감소
+tl_1.to(resizeDiv, {
+    width: "100%",
+    height: "150vh",
+    borderRadius: "70px",
+    scale: 0.8,
+    yPercent: -20,
+    scrub: 2,
+    duration: 5,
 });
+
 
 // 투자철학 & 정책
 const resizeDiv2 = document.querySelector(".layerd_2_bg");
@@ -157,69 +159,68 @@ const tl_2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".layerd_2",
         start: "top-=300px center",
-        end: "+=2000px",
+        end: "+=2500px",
         scrub: 2,
+        duration: 3,
         toggleActions: "play reverse play  reverse",
     },
 });
 tl_2.set(resizeDiv2, {
-    scale: 0.6,
+    width: "100%",
+    height: "150vh",
+    scale: 0.7,
     yPercent: -10,
     borderRadius: "80px",
 });
-tl_2.to(
-    resizeDiv2,
-    {
-        scale: 0.7,
-        duration: 2,
-        yPercent: -10,
-        borderRadius: "80px",
-        immediateRender: false,
+tl_2.to( resizeDiv2, {
+    width: "100%",
+    height: "160vh",
+    scale: 0.9,
+    duration: 1,
+    yPercent: -10,
+    borderRadius: "60px",
+    immediateRender: false,
+}, "+=0" );
+tl_2.to( resizeDiv2, {
+    width: "100%",
+    height: "160vh",
+    scale: 1.0,
+    duration: 3,
+    yPercent: -10,
+    borderRadius: "60px",
+    immediateRender: false,
+}, "+=0" );
+tl_2.to( resizeDiv2, {
+    width: "100%",
+    height: "160vh",
+    scale: 1.0,
+    duration: 4,
+    immediateRender: false,
+    onUpdate: function () {
+        if (
+            !textAnimationTriggered &&
+            gsap.getProperty(resizeDiv, "scale") >= 0.8
+        ) {
+            textAnimationTriggered = true;
+            revealTextAnimation();
+        }
     },
-    "+=0"
-);
-tl_2.to(
-    resizeDiv2,
-    {
-        width: "100%",
-        height: "160vh",
-        scale: 1.0,
-        duration: 2,
-        immediateRender: false,
-        onUpdate: function () {
-            if (
-                !textAnimationTriggered &&
-                gsap.getProperty(resizeDiv, "scale") >= 0.8
-            ) {
-                textAnimationTriggered = true;
-                revealTextAnimation();
-            }
-        },
-    },
-    "+=0"
-);
-tl_2.to(
-    resizeDiv2,
-    {
-        width: "100%",
-        height: "160vh",
-        scale: 1.0,
-        duration: 2,
-        immediateRender: false,
-    },
-    "+=0"
-); 
+}, "+=0" );
 tl_2.to(resizeDiv2, {
     width: "100%",
     height: "160vh",
     scale: 0.8,
     duration: 2,
+    borderRadius: "60px",
     immediateRender: false,
 });
 tl_2.to(resizeDiv2, {
     width: "100%",
+    height: "160vh",
     scale: 0.6,
+    yPercent: -10,
     duration: 2,
+    borderRadius: "80px",
     immediateRender: false,
 });
 
@@ -229,54 +230,46 @@ const resizeDiv3 = document.querySelector(".layerd_3_bg");
 const tl_3 = gsap.timeline({
     scrollTrigger: {
         trigger: ".layerd_3",
-        start: "top-=500px center",
+        start: "top center",
         end: "+=1500px",
         scrub: 1,
         toggleActions: "play reverse play  reverse",
     },
 });
 tl_3.set(resizeDiv3, {
-    scale: 0.5,
-    yPercent: -20,
+    width: "100%",
+    height: "150vh",
+    yPercent: -10,
+    scale: 0.7,
     borderRadius: "80px",
 });
-tl_3.to(
-    resizeDiv3,
-    {
-        scale: 0.7,
-        immediateRender: false,
+tl_3.to( resizeDiv3,{
+    width: "100%",
+    height: "150vh",
+    scale: 0.9,
+    immediateRender: false,
+},"+=0");
+tl_3.to(resizeDiv3, {
+    borderRadius: "0",
+    scale: 1,
+    duration: 1,
+    yPercent: 0,
+    immediateRender: false,
+    onUpdate: function () {
+        if (
+            !textAnimationTriggered &&
+            gsap.getProperty(resizeDiv, "scale") >= 0.8
+        ) {
+            textAnimationTriggered = true;
+            revealTextAnimation();
+        }
     },
-    "+=0"
-);
-tl_3.to(
-    resizeDiv3,
-    {
-        borderRadius: "0",
-        scale: 1,
-        duration: 1,
-        yPercent: 0,
-        immediateRender: false,
-        onUpdate: function () {
-            if (
-                !textAnimationTriggered &&
-                gsap.getProperty(resizeDiv, "scale") >= 0.8
-            ) {
-                textAnimationTriggered = true;
-                revealTextAnimation();
-            }
-        },
-    },
-    "+=0"
-);
-tl_3.to(
-    resizeDiv3,
-    {
-        scale: 1,
-        duration: 1,
-        immediateRender: false,
-    },
-    "+=0"
-);
+}, "+=0");
+tl_3.to(resizeDiv3,{
+    scale: 1,
+    duration: 1,
+    immediateRender: false,
+},"+=0");
 
 // reveal text
 // 텍스트 나타나는 애니메이션 함수
@@ -306,7 +299,7 @@ function revealTextAnimation() {
             tl.fromTo(
                 target,
                 { y: "100%", opacity: 0 },
-                { y: "0%", opacity: 1,},
+                { y: "0%", opacity: 1, duration: 0.2 },
                 "+=0.01"
             );
         });
@@ -351,7 +344,7 @@ function revealTextAnimation() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: container,
-                start: "top-=300px center",
+                start: "top center",
                 end: "+=200px",
                 // toggleActions: "play reverse play  reverse",
             },

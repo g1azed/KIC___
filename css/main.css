@@ -231,15 +231,9 @@ div.sec_main_t p {
     color: #fff;
 }
 
-/* layerd_1 */
+/* layerd_ */
 .layerd_1{
     margin-top: 100px;
-}
-.layerd_2{
-    /* width: 100%;
-    height: 160vh;
-    transform: scale(0.8);
-    border-radius: 80px; */
 }
 .layered {
     position: relative;
@@ -247,13 +241,6 @@ div.sec_main_t p {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.layered > .flex_sec_text {
-    /* opacity: 0; */
-
-}
-.layered > .flex_sec_bg {
-    border-radius: 10px;
 }
 .layerd_2_text {
     top: 30%;
