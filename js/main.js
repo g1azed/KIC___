@@ -52,50 +52,64 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const h2 = document.querySelector(".main_1_text h2");
-    let letterIndex = 0; // 전체 글자 순서를 위한 전역 카운터
 
     /**
      * 주어진 요소 내의 텍스트 노드를 한 글자씩 <span>으로 감싸는 함수
      * @param {Element} element - 현재 처리할 DOM 요소
      * @param {boolean} isSlow - 현재 컨텍스트에서 느린 애니메이션을 적용할지 여부
+     * @param {number} baseDelay - 현재 애니메이션이 시작되는 기준 delay 값
+     * @returns {number} - 마지막 적용된 delay 값 반환
      */
-    function wrapTextNodes(element, isSlow) {
-        // 자식 노드를 배열로 복사 (DOM 조작에 안전하게)
+    function wrapTextNodes(element, isSlow = false, baseDelay = 0) {
         const nodes = Array.from(element.childNodes);
+        let letterIndex = 0; // 전체 글자 순서를 위한 전역 카운터
+        let currentDelay = baseDelay; // 현재 적용할 delay 값
+    
         nodes.forEach((child) => {
             if (child.nodeType === Node.TEXT_NODE) {
                 const text = child.textContent;
                 const frag = document.createDocumentFragment();
+    
                 for (let i = 0; i < text.length; i++) {
                     const span = document.createElement("span");
                     span.textContent = text[i];
-                    span.style.animationDelay = letterIndex * 0.05 + "s";
-
-                    // 현재 컨텍스트에 따라 애니메이션 지속시간 결정
-                    span.style.animationDuration = isSlow ? "1.5s" : "0.5s";
-                    letterIndex++;
+    
+                    // ✅ 기본 속도 설정
+                    let delay = currentDelay + letterIndex * (isSlow ? 0.1 : 0.05); // ✅ `<i>` 태그 안은 더 느리게
+                    let duration = isSlow ? 1.5 : 1;
+    
+                    // ✅ 스타일 적용
+                    span.style.animationDelay = `${delay}s`;
+                    span.style.animationDuration = `${duration}s`;
+                    span.style.animationTimingFunction = "ease-out"; // ✅ 자연스럽게 느려지도록 설정
+    
+                    letterIndex++; // 전체 글자 인덱스 증가
                     frag.appendChild(span);
                 }
                 element.replaceChild(frag, child);
             } else if (child.nodeType === Node.ELEMENT_NODE) {
                 if (child.tagName.toLowerCase() === "br") {
-                    return;
+                    return; // `<br>` 태그는 무시
+                } else if (child.tagName.toLowerCase() === "i") {
+                    // ✅ `<i>` 태그 내부는 느린 애니메이션 적용
+                    let slowEndDelay = wrapTextNodes(child, true, currentDelay);
+                    currentDelay = slowEndDelay + 0.5; // ✅ `<i>` 태그 끝난 후 0.5초 대기 후 다음 텍스트 시작
                 } else {
-                    // 만약 이 요소에 slow 클래스가 있다면, 해당 요소 내부는 느린 속도로 처리
-                    let nextSlow = isSlow;
-                    if (child.classList.contains("slow")) {
-                        nextSlow = true;
-                    }
-                    // 현재 요소의 자식들 처리 (nextSlow 값에 따라)
-                    wrapTextNodes(child, nextSlow);
+                    // ✅ 일반 요소는 기본 속도로 적용
+                    currentDelay = wrapTextNodes(child, false, currentDelay);
                 }
             }
         });
+    
+        return currentDelay; // ✅ 마지막 적용된 delay 값 반환
     }
-    // h2 내부를 일반 속도(false)부터 시작하여 처리
-    wrapTextNodes(h2, false);
-
-    // 마우스 커서
+    
+    // ✅ 실행
+    wrapTextNodes(h2);
+    
+    
+    /* ----------------------------------------------------------------- */
+    /* 마우스 커서 */
     const container = document.getElementById("cursorContainer");
     const customCursor = document.getElementById("customCursor");
 

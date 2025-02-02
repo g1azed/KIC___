@@ -155,10 +155,6 @@ tl_1.to(resizeDiv, {
 const resizeDiv2 = document.querySelector(".layerd_2_bg");
 const tl_2 = gsap.timeline({
     scrollTrigger: {
-        markers: {
-            startColor: 'red',
-            endColor: 'red',
-        },
         trigger: ".layerd_2",
         start: "top-=300px center",
         end: "+=2000px",
@@ -321,10 +317,6 @@ function revealTextAnimation() {
         gsap.set(".layerd_2_text", { yPercent: "40", opacity: 0 });
         let tl = gsap.timeline({
             scrollTrigger: {
-                markers: {
-                    startColor: 'green',
-                    endColor: 'green',
-                },
                 trigger: ".layerd_2",
                 start: "top center",
                 end: "+=200px",
