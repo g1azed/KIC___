@@ -284,7 +284,7 @@ tl_3.to(
 function revealTextAnimation() {
     gsap.utils.toArray(".layerd_1_text").forEach((container) => {
         let revealElements = container.querySelectorAll(".reveal");
-        gsap.set(".layerd_1_text", {  yPercent: "10", opacity: 0 });
+        gsap.set(".layerd_1_text", {  yPercent: "40", opacity: 0 });
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.layerd_1_text',
@@ -294,8 +294,9 @@ function revealTextAnimation() {
         });
         tl.fromTo(
             container,
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1, }
+            { yPercent: "40", opacity: 0 },
+            { yPercent: "0", opacity: 1, duration: 0.2 },
+            { yPercent: "-40", opacity: 0 }
         );
         revealElements.forEach((element) => {
             let word = element.innerText;
@@ -345,19 +346,25 @@ function revealTextAnimation() {
 
     gsap.utils.toArray(".layerd_3_text").forEach((container) => {
         let revealElements = container.querySelectorAll(".reveal");
-        gsap.set(".layerd_3_text", { y: 1200, opacity: 0 });
+        gsap.set(".layerd_3_text", { yPercent: "40",  opacity: 0 });
         let tl = gsap.timeline({
             scrollTrigger: {
+                markers: {
+                    startColor: 'green',
+                    endColor: 'green',
+                },
+                
                 trigger: container,
-                start: "top-=1800px center",
-                end: "+=10px",
+                start: "top-=300px center",
+                end: "+=200px",
                 toggleActions: "play none none none",
             },
         });
         tl.fromTo(
             container,
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.2 }
+            { yPercent: "40", opacity: 0 },
+            { yPercent: "0", opacity: 1, duration: 0.2 },
+            { yPercent: "-40", opacity: 0 }
         );
         revealElements.forEach((element) => {
             let word = element.innerText;
