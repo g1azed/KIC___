@@ -30,7 +30,7 @@ const tl = gsap.timeline({
         start: "top center",
         end: "+=900px",
         scrub: 1,
-        toggleActions: "play none reverse none",
+        toggleActions: "play reverse play  reverse",
     },
 });
 tl.set(".sec_establish_bg", {
@@ -97,7 +97,7 @@ const tl_1 = gsap.timeline({
         start: "center center",
         end: "+=1700px",
         scrub: 2,
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play reverse play  reverse",
     },
 });
 tl_1.set(resizeDiv, {
@@ -159,7 +159,7 @@ const tl_2 = gsap.timeline({
         start: "top-=300px center",
         end: "+=2000px",
         scrub: 2,
-        // toggleActions: "play reverse play reverse",
+        toggleActions: "play reverse play  reverse",
     },
 });
 tl_2.set(resizeDiv2, {
@@ -231,9 +231,8 @@ const tl_3 = gsap.timeline({
         trigger: ".layerd_3",
         start: "top-=500px center",
         end: "+=1500px",
-
         scrub: 1,
-        // toggleActions: "play none none none",
+        toggleActions: "play reverse play  reverse",
     },
 });
 tl_3.set(resizeDiv3, {
@@ -290,6 +289,7 @@ function revealTextAnimation() {
                 trigger: '.layerd_1_text',
                 start: "top bottom",
                 end: "+=200px",
+                toggleActions: "play pause play  reverse",
             },
         });
         tl.fromTo(
@@ -322,6 +322,7 @@ function revealTextAnimation() {
                 start: "top center",
                 end: "+=200px",
                 // pin: true,
+                toggleActions: "play pause play  reverse",
             },
         });
         tl.fromTo(
@@ -349,15 +350,10 @@ function revealTextAnimation() {
         gsap.set(".layerd_3_text", { yPercent: "40",  opacity: 0 });
         let tl = gsap.timeline({
             scrollTrigger: {
-                markers: {
-                    startColor: 'green',
-                    endColor: 'green',
-                },
-                
                 trigger: container,
                 start: "top-=300px center",
                 end: "+=200px",
-                toggleActions: "play none none none",
+                toggleActions: "play pause play  reverse",
             },
         });
         tl.fromTo(
